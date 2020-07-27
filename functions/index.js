@@ -2,7 +2,7 @@ const functions = require('firebase-functions');
 const express = require('express')
 const fetch = require('node-fetch')
 const engines = require('consolidate')
-
+var path = require('path');
 
 
 const app = express();
