@@ -44,7 +44,7 @@ app.get('/team/:teamNumber', async (req, res) => {
     var teamNumber = req.params.teamNumber;
     var [teamNickName, teamName, teamLocation, teamImageString] = await getTeamDetails(teamNumber);
     
-    // if(!teamDetails.name || !teamDetails.nickname) return res.render('404')
+    if(!teamDetails.name || !teamDetails.nickname) return res.render('404')
 
     res.render('team.hbs', { teamName, teamNickName })
 })
