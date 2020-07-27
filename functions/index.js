@@ -46,7 +46,7 @@ app.get('/team/:teamNumber', async (req, res) => {
     
     // if(!teamDetails.name || !teamDetails.nickname) return res.render('404')
 
-    res.render('team', { teamName, teamNickName })
+    res.render('team.hbs', { teamName, teamNickName })
 })
 //f
 
