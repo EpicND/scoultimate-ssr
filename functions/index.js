@@ -8,7 +8,7 @@ const engines = require('consolidate')
 const app = express();
 
 app.engine('hbs', engines.handlebars)
-app.set('views', './views')
+app.set('views', path.join(__dirname, '/views'))
 app.set('view engine', 'hbs')
 
 // Create and Deploy Your First Cloud Functions
