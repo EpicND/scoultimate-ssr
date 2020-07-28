@@ -1,4 +1,4 @@
-const functions = require('firebase-functions');
+// const functions = require('firebase-functions');
 const express = require('express')
 const fetch = require('node-fetch')
 const engines = require('consolidate')
@@ -10,6 +10,7 @@ const app = express();
 app.engine('hbs', engines.handlebars)
 app.set('views', path.join(__dirname, '/views'))
 app.set('view engine', 'hbs')
+app.use(express.static(path.join(__dirname, '/public')))
 
 // Create and Deploy Your First Cloud Functions
 // https://firebase.google.com/docs/functions/write-firebase-functions
@@ -46,14 +47,14 @@ app.get('/team/:teamNumber', async (req, res) => {
     
     if(!teamNickName || !teamName) return res.render('404')
 
-    res.render('team.hbs', { teamName, teamNickName })
+    res.render('team', { teamName, teamNickName })
 })
 //f
 
-app.use(function (req, res, next){
-    res.status(404).render('404')
-})
+// app.use(function (req, res, next){
+//     res.status(404).render('404')
+// })
 
-app.listen(process.env.PORT || 80)
+app.listen(process.env.PORT || 8080)
 
-exports.ssrapp = functions.https.onRequest(app)
+// exports.ssrapp = functions.https.onRequest(app)
