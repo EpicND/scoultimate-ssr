@@ -50,7 +50,7 @@ app.get('/team/:teamNumber', async (req, res) => {
     res.render('team', { teamName, teamNickName })
 })
 
-app.get('/index', async (req, res) => {
+app.get('/', async (req, res) => {
    
 
     res.render('index')
