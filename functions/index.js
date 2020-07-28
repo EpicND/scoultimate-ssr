@@ -1,4 +1,4 @@
-const functions = require('firebase-functions');
+// const functions = require('firebase-functions');
 const express = require('express')
 const fetch = require('node-fetch')
 const engines = require('consolidate')
@@ -48,7 +48,13 @@ app.get('/team/:teamNumber', async (req, res) => {
 
     res.render('team.hbs', { teamName, teamNickName })
 })
-//f
+
+app.get('/index', async (req, res) => {
+   
+
+    res.render('index')
+})
+
 
 app.use(function (req, res, next){
     res.status(404).render('404')
@@ -56,4 +62,4 @@ app.use(function (req, res, next){
 
 app.listen(process.env.PORT || 80)
 
-exports.ssrapp = functions.https.onRequest(app)
+// exports.ssrapp = functions.https.onRequest(app)
