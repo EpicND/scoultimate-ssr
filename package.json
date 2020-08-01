@@ -12,6 +12,8 @@
     "node": "13"
   },
   "dependencies": {
+    "@material/drawer": "^7.0.0",
+    "@material/top-app-bar": "^7.0.0",
     "consolidate": "^0.15.1",
     "firebase-admin": "^8.10.0",
     "firebase-functions": "^3.6.1",
