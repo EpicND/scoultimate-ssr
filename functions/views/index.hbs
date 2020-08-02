@@ -28,8 +28,12 @@
       <meta name="msapplication-TileColor" content="#2b5797">
       <meta name="msapplication-config" content="../assets/browserconfig.xml">
       <meta name="theme-color" content="#ffffff">
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 
-      <l<link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+
+      <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
   <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
@@ -39,30 +43,92 @@
 
 
     </head>
-    <body>
+<body>
         <!-- particles.js container --> <!-- particles.js lib - https://github.com/VincentGarreau/particles.js --> <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib -->
 
-        <div id="particles-js">
+        <div id="particles-js"> </div>
 
-        </div>
+  <aside class="mdc-drawer mdc-drawer--modal">
+    <div class="mdc-drawer__header">
+      <h3 class="mdc-drawer__title" src="signin.html">Dashboard</h3>
+      <h6 class="mdc-drawer__subtitle trigger"><a href="javascript:void(0)"  class="link signin dashboard-signin" id="dashboard-signin">Sign In</a></h6>
+      {{!-- <img class="asr" src="assets/android-chrome-192x192.png" /> --}}
+    </div>
+    <div class="mdc-drawer__content">
+      <nav class="mdc-list">
+        <a class="mdc-list-item mdc-list-item--activated dashboard-account" href="#" tabindex="0" aria-current="page">
+          <i class="material-icons mdc-list-item__graphic avatar avatar2" aria-hidden="true" src="signin.html">account_circle</i>
+          <span class="mdc-list-item__text dashboard-account" id="dashboard-account" href="signin.html">My Account</span>
+        </a>
+        <a class="mdc-list-item" href="#" tabindex="0">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">all_out</i>
+          <span class="mdc-list-item__text">My Team</span>
+        </a>
+        <a class="mdc-list-item" href="#" tabindex="0">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">search</i>
+          <span class="mdc-list-item__text">Search</span>
+        </a>
+        <a class="mdc-list-item" href="#" tabindex="0">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">notes</i>
+          <span class="mdc-list-item__text">Scouting</span>
+        </a>
+        <a class="mdc-list-item" href="#" tabindex="0">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">miscellaneous_services</i>
+          <span class="mdc-list-item__text">Other Services</span>
+        </a>
+        <a class="mdc-list-item" href="#" tabindex="0">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">info</i>
+          <span class="mdc-list-item__text">Info</span>
+        </a>
+      </nav>
+    </div>
+  </aside>
 
-        <div class="header">
+  <div class="mdc-drawer-scrim"></div>
+
+  <div class="mdc-drawer-app-content">
+
+    <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+      <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start" id="headerC">
+          <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
+          <span class="mdc-top-app-bar__title"></span>
+          <div class="iconsbox">
+            <img class="sv" src="https://img.icons8.com/dusk/64/000000/ios-logo.png"/>
+            <img class="sv" src="https://img.icons8.com/dusk/64/000000/android.png"/>
+            <img class="sv" src="https://img.icons8.com/plasticine/100/000000/discord-logo.png"/>
+            <img class="sv" src="https://img.icons8.com/dusk/64/000000/slack.png"/>
+          </div>
+          
+
+        </section>
+      </div>
+    </header>
+
+    <main class="mdc-top-app-bar--fixed-adjust">
+
+
+  </div>
+
+        
+
+        {{!-- <div class="header">
             <img class="logo" src="../assets/logo2.png"/>
-        </div>
+        </div> --}}
 
 
         <div class="outer">
             <div class="textbox">
               
                 <h1 class="text" id="title"> Scoultimate </h1>
-                <h3 class="text description"> Part social media, part scouting app. An innovative user friendly solution made for everyone. All the data you want, right at your fingertips.</h3>
-                {{!-- <h4 class="text green"> Perfect For You</h4> --}}
+                <h3 class="text description"> An innovative user friendly solution made for everyone. All the data you want, right at your fingertips -- well formatted and easy to read. Everything you could want from a robotics-related site, all in one place. Part social media, part scouting app.</h3>
+                <h4 class="text white"> Perfect For You</h4>
             </div>
             <div class="btnbox">
               <div class="mdc-touch-target-wrapper">
                 <button class="mdc-button mdc-button--outlined">
                   <div class="mdc-button__ripple"></div>
-                  <span class="mdc-button__label">Get Started</span>
+                  <span class="mdc-button__label" style="color: #ffd000;">Get Started</span>
                 </button>
               </div>
             </div>
@@ -74,11 +140,10 @@
 
 
 
-
         <script>
             particlesJS("particles-js", {"particles":{"number":{"value":80,"density":{"enable":true,"value_area":800}},"color":{"value":"#1f2833"},"shape":{"type":"circle","stroke":{"width":0,"color":"#1f2833"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":0.5,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":true,"distance":150,"color":"#c5c6c7","opacity":0.4,"width":1},"move":{"enable":true,"speed":6,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":false,"mode":"bubble"},"onclick":{"enable":true,"mode":"repulse"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});
             mdc.ripple.MDCRipple.attachTo(document.querySelector('.foo-button'));
         </script>
-
+<script src="../js/materiallib.js"></script>
     </body>
 </html>

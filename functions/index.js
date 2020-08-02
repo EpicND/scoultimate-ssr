@@ -5,6 +5,8 @@ const engines = require('consolidate')
 var path = require('path');
 
 
+
+
 const app = express();
 
 app.engine('hbs', engines.handlebars)
@@ -53,7 +55,7 @@ app.get('/team/:teamNumber', async (req, res) => {
 app.get('/', async (req, res) => {
    
 
-    res.render('index')
+    res.render('index', );
 })
 
 
