@@ -47,7 +47,7 @@ app.get('/team/:teamNumber', async (req, res) => {
     
     if(!teamNickName || !teamName) return res.render('404')
 
-    res.render('team', { teamName, teamNickName })
+    res.render('team', { teamName, teamNickName, teamNumber })
 })
 
 app.get('/', async (req, res) => {
