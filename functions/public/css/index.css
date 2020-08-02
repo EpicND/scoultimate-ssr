@@ -72,3 +72,9 @@ html, body {
 .mdc-button:not(:disabled) {
     color: white;
 }
+
+.description {
+    width: 60%;
+    margin-left: 20%;
+    font-size: 20px;
+}
