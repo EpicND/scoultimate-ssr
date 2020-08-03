@@ -63,6 +63,7 @@ html, body {
     font-size: 18px;
     margin: 10px;
     margin-top: 5px;
+    margin-bottom:15px;
 }
 
 .green {
@@ -122,3 +123,29 @@ html, body {
     position: absolute;
     right:0;
 }
+
+.spacing {
+    letter-spacing: 2px;
+}
+
+.bottom {
+    position:absolute;
+    bottom: 5px;
+    width:100%;
+    left:0px;
+}
+
+.font-t {
+    font-family: 'Tomorrow', sans-serif;
+}
+
+.fillani:hover {
+    /* fill:#000000 !important; */
+    /* animation-name: colorfillchange;
+    animation-duration: .5s; */
+}
+
+/* @keyframes colorfillchange {
+    from { fill:#FFFFFFFF;}
+    to { fill:#C5C6C7;}
+} */
