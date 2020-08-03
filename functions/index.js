@@ -37,6 +37,19 @@ app.all('*', (req, res, next) => {
     next();
 })
 
+async function getUserDecodedClaims(sessionToken) {
+    var resp;
+    await admin
+    .auth()
+    .verifySessionCookie(sessionToken, true)
+    .then((decodedClaims) => {
+        resp = decodedClaims
+        })
+        .catch(error => {resp = null;})
+
+    return resp;
+}
+
 app.post("/sessionLogin", (req, res) => {
     const idToken = req.body.idToken.toString();
 
@@ -99,9 +112,9 @@ app.get('/team/:teamNumber', async (req, res) => {
 })
 
 app.get('/', async (req, res) => {
-   
-
-    res.render('index', );
+   var userData = await getUserDecodedClaims(req.cookies.session || '')
+    var profileImageUrl = (userData && userData.picture) ? userData.picture : null;
+    res.render('index', {profileImageUrl});
 })
 
 app.get('/account', (req, res) => {
