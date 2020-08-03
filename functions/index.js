@@ -2,10 +2,13 @@
 const express = require('express')
 const fetch = require('node-fetch')
 const engines = require('consolidate')
-var path = require('path');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const csrf = require('csurf');
+const bodyParser = require('body-parser');
+const admin = require("firebase-admin");
 
-
-
+const csrfMiddleware = csrf({cookie: true})
 
 const app = express();
 
@@ -13,10 +16,52 @@ app.engine('hbs', engines.handlebars)
 app.set('views', path.join(__dirname, '/views'))
 app.set('view engine', 'hbs')
 app.use(express.static(path.join(__dirname, '/public')))
+app.use(bodyParser.json())
+app.use(cookieParser())
+app.use(csrfMiddleware)
+
+
+
+var serviceAccount = require("./serviceAccount.json");
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://scoultimate.firebaseio.com"
+});
 
 // Create and Deploy Your First Cloud Functions
 // https://firebase.google.com/docs/functions/write-firebase-functions
 
+app.all('*', (req, res, next) => {
+    res.cookie("SXSRF-TOKEN", req.csrfToken());
+    next();
+})
+
+app.post("/sessionLogin", (req, res) => {
+    const idToken = req.body.idToken.toString();
+
+    const expiresIn = 60 * 60 * 24 * 5 * 1000;
+    admin
+        .auth()
+        .createSessionCookie(idToken, {expiresIn})
+        .then(
+            (sessionCookie) => {
+                const options = {maxAge: expiresIn, httpOnly: true}
+                res.cookie('session', sessionCookie, options);
+                res.end(JSON.stringify({status: "success"}))
+            },
+            (error) => {
+                res.status(401).send("Error 401: Unauthorized Request")
+            }
+        )
+
+})
+
+
+app.get('/sessionLogout', (req, res) => {
+    res.clearCookie("session")
+    res.redirect('/auth')
+})
 
 async function gdfe(endpoint) {
     var response = new Object;
@@ -30,6 +75,7 @@ async function gdfe(endpoint) {
         });
     return response;
 }
+
 
 
 async function getTeamDetails(teamNumber) {
@@ -58,10 +104,28 @@ app.get('/', async (req, res) => {
     res.render('index', );
 })
 
+app.get('/account', (req, res) => {
+    const sessionCookie = req.cookies.session || '';
 
-// app.use(function (req, res, next){
-//     res.status(404).render('404')
-// })
+    admin
+    .auth()
+    .verifySessionCookie(sessionCookie, true)
+    .then((decodedClaims) => {
+        res.send(`${decodedClaims.name}`)
+    })
+    .catch((error) => {
+        res.clearCookie("session")
+        res.redirect('/auth')
+    })
+})
+app.get('/auth', async (req, res) => {
+   res.render('authentication');
+})
+
+
+app.use(function (req, res, next){
+    res.status(404).render('404')
+})
 
 app.listen(process.env.PORT || 8080)
 
