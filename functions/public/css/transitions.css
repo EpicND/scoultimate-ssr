@@ -1,0 +1,19 @@
+@keyframes chco1 {
+    from { }
+    to { color: green}
+}
+@keyframes reappear {
+    from { }
+    to { opacity:1}
+}
+
+
+.t-1 {
+    animation-name: chco1;
+  animation-duration: 1s;
+}
+
+.at-1 {
+    animation-name: reappear;
+    animation-duration: 1s; 
+}
