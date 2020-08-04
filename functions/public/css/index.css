@@ -163,3 +163,9 @@ html, body {
     position: absolute;
     top:0;
 }
+
+.pfp {
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+}

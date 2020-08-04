@@ -66,7 +66,7 @@ ui.start('#firebaseui-auth-container', {
             return firebase.auth().signOut();
         })
         .then(() => {
-            window.location.assign('/index')
+            window.location.assign('/')
         })
       })
       // ...
