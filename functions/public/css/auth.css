@@ -1,0 +1,74 @@
+#firebaseui-auth-container {
+    margin-top: 33%;
+    margin-bottom: 33%;
+}
+.firebaseui-idp-google, .firebaseui-idp-google:hover, .mdl-button.firebaseui-idp-google:active, .mdl-button.firebaseui-idp-google:focus {
+    background-color: #2f2f2f;
+}
+.firebaseui-idp-password, .firebaseui-idp-password:hover, .mdl-button.firebaseui-idp-password:active, .mdl-button.firebaseui-idp-password:focus {
+    background-color: #b52a1e;
+}
+.firebaseui-idp-google>.firebaseui-idp-text {
+    color: #ffffff;
+}
+.firebaseui-title {
+    color: white;
+}
+.firebaseui-textfield {
+    background-color: #333333;
+    width: 100%;
+}
+label.mdl-textfield__label.firebaseui-label {
+    color: white;
+}
+.firebaseui-textfield.mdl-textfield .firebaseui-label::after {
+    background-color: #949494;
+}
+.firebaseui-textfield.mdl-textfield .firebaseui-label::before {
+    background-color: #949494;
+}
+.mdl-card.mdl-shadow--2dp.firebaseui-container.firebaseui-id-page-sign-in {
+    background-color: #333333;
+}
+.mdl-button--raised.mdl-button--colored {
+    background: #ffbc00;
+}
+.mdl-button.mdl-button--colored {
+    color: #000000;
+}
+.mdl-button--raised.mdl-button--colored {
+    background: #e6b80f;
+}
+.mdl-button--primary.mdl-button--primary {
+    color: #ffc800;
+}
+.mdl-card.mdl-shadow--2dp.firebaseui-container.firebaseui-id-page-password-sign-in {
+    background-color: #333333;
+}
+.mdl-button--raised.mdl-button--colored:active {
+    background-color: #ff8100;
+}
+.mdl-button--raised.mdl-button--colored:hover {
+    background-color: #ff8100;
+}
+input.mdl-textfield__input.firebaseui-input.firebaseui-id-email {
+    color: white;
+}
+.mdl-card.mdl-shadow--2dp.firebaseui-container.firebaseui-id-page-password-sign-up {
+    background-color: #333333;
+}
+input.mdl-textfield__input.firebaseui-input.firebaseui-id-name {
+    color: lightgray;
+}
+input.mdl-textfield__input.firebaseui-input.firebaseui-id-new-password {
+    color: lightgray;
+}
+.mdl-button--raised.mdl-button--colored:focus:not(:active) {
+    background-color: #ff8100;
+}
+input.mdl-textfield__input.firebaseui-input.firebaseui-id-password {
+    color: white;
+}
+body {
+    background-color: #464646;
+}
