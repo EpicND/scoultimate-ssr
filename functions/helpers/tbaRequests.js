@@ -1,3 +1,4 @@
+const fetch = require('node-fetch');
 
 async function gdfe(endpoint) {
     var response = new Object;
@@ -14,10 +15,10 @@ async function gdfe(endpoint) {
 
 async function getTeamDetails(teamNumber) {
     // var teamNickName, teamName, teamLocation, teamImageString;
-    var response;
+    var response = {};
     await gdfe(`team/frc${teamNumber}`)
         .then((resp) => {
-    if(resp["Errors"].length >= 1) return response = {};
+    if(resp["Errors"] != undefined ||resp["Errors"] != null) return response = {};
             response.name = (resp.name) ? resp.name : null;
             response.nickname = (resp.nickname) ? resp.nickname : null ;
             response.location = (resp.state_prov && resp.city) ? `${resp.city}, ${resp.state_prov}` : "Not Available"
@@ -31,5 +32,5 @@ return response;
 
 module.exports = {
     gdfe,
-
+    getTeamDetails
 }

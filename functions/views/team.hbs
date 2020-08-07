@@ -7,7 +7,7 @@
 {{!-- <meta property="og:url" content="http://euro-travel-example.com/index.htm%22%3E"> --}}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{teamNickName}} | Scoultimate</title>
+    <title>{{teamData.nickname}} | Scoultimate</title>
         <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
@@ -50,8 +50,8 @@
     </div>
   </aside>
     <main data-barba="container" data-barba-namespace="team">
-    <h2>{{teamNickName}}</h2>
-    <h5>{{teamName}}</h5>
+    <h2>{{teamData.nickname}}</h2>
+    <h5>{{teamData.name}}</h5>
 </main>
 </body>
 </html>

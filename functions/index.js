@@ -88,7 +88,7 @@ app.get('/team/:teamNumber', async (req, res) => {
     var teamNumber = req.params.teamNumber;
     var teamData = await tba.getTeamDetails(teamNumber);
     
-    if(!teamNickName || !teamName) return res.render('404')
+    if(!teamData) return res.render('404')
 
     res.render('team', { teamData })
 });
