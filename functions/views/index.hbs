@@ -44,10 +44,16 @@
 
 
     </head>
-<body>
+<body data-barba="wrapper">
         <!-- particles.js container --> <!-- particles.js lib - https://github.com/VincentGarreau/particles.js --> <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib -->
-
-        <div id="particles-js"> </div>
+<ul class="transition">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+     
 
   <aside class="mdc-drawer mdc-drawer--modal">
     <div class="mdc-drawer__header">
@@ -117,7 +123,8 @@
             <img class="logo" src="../assets/logo2.png"/>
         </div> --}}
 
-
+<main data-barba="container" data-barba-namespace="index">
+     <div id="particles-js"> </div>
         <div class="outer">
             <div class="adj">
 
@@ -129,10 +136,11 @@
             </div>
             <div class="btnbox">
               <div class="mdc-touch-target-wrapper">
-                <button class="mdc-button mdc-button--outlined">
+                <button class="mdc-button mdc-button--outlined" href="/team/2264">
                   <div class="mdc-button__ripple"></div>
                   <span class="mdc-button__label" style="color: #ffd000;">Get Started</span>
                 </button>
+                <a href="/team/2264">2264</a>
               </div>
             </div>
             
@@ -145,17 +153,21 @@
         <div class="blankspace">
           
         </div>
-
-
-
-
-
-
-        <script>
+             <script>
             particlesJS("particles-js", {"particles":{"number":{"value":80,"density":{"enable":true,"value_area":800}},"color":{"value":"#1f2833"},"shape":{"type":"circle","stroke":{"width":0,"color":"#1f2833"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":0.5,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":true,"distance":150,"color":"#c5c6c7","opacity":0.4,"width":1},"move":{"enable":true,"speed":6,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":false,"mode":"bubble"},"onclick":{"enable":true,"mode":"repulse"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});
             mdc.ripple.MDCRipple.attachTo(document.querySelector('.foo-button'));
         </script>
+</main>
+
+
+
+
+
+   
 <script src="../js/materiallib.js"></script>
 <script src="../js/scrollanimations.js"></script>
+<script src="https://unpkg.com/@barba/core"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+<script src="../js/transitions.js"></script>
     </body>
 </html>
