@@ -237,7 +237,7 @@ html, body {
 }
 ul.transition { 
     display: flex;
-    position: absolute;
+    position: fixed;
     z-index: 10;
     height: 100vh;
     width: 100%;
@@ -246,6 +246,7 @@ ul.transition {
     margin: 0;
     padding:0px;
     pointer-events: none;
+
 }
 
 ul.transition li {
