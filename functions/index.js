@@ -7,6 +7,8 @@ const cookieParser = require('cookie-parser');
 const csrf = require('csurf');
 const bodyParser = require('body-parser');
 const admin = require("firebase-admin");
+const tba = require(__dirname + "helpers/tbaRequests.js")
+
 
 const csrfMiddleware = csrf({cookie: true})
 
@@ -76,40 +78,20 @@ app.get('/sessionLogout', (req, res) => {
     res.redirect('/auth')
 })
 
-async function gdfe(endpoint) {
-    var response = new Object;
-    // var url = new URL(`https://www.thebluealliance.com/api/v3/${endpoint}?X-TBA-Auth-Key=lrqZK0XAvSpeHXuWi9vhbmnAbF4ueBRQB3OevJC1pOWIWQdwX1WKRJ4oQceP0ox5`);
-    await fetch(`https://www.thebluealliance.com/api/v3/${endpoint}?X-TBA-Auth-Key=lrqZK0XAvSpeHXuWi9vhbmnAbF4ueBRQB3OevJC1pOWIWQdwX1WKRJ4oQceP0ox5`)
-        .then((response) => {
-            return response.json()
-        })
-        .then((respJson) => {
-            response = respJson;
-        });
-    return response;
-}
 
 
 
-async function getTeamDetails(teamNumber) {
-    var teamNickName, teamName, teamLocation, teamImageString;
-    await gdfe(`team/frc${teamNumber}`)
-        .then((resp) => {
-            teamName = resp.name;
-            teamNickName = resp.nickname;
-        })
 
-return [teamNickName, teamName, teamLocation, teamImageString]
-}
+
 
 app.get('/team/:teamNumber', async (req, res) => {
     var teamNumber = req.params.teamNumber;
-    var [teamNickName, teamName, teamLocation, teamImageString] = await getTeamDetails(teamNumber);
+    var teamData = await tba.getTeamDetails(teamNumber);
     
     if(!teamNickName || !teamName) return res.render('404')
 
-    res.render('team', { teamName, teamNickName, teamNumber })
-})
+    res.render('team', { teamData })
+});
 
 app.get('/', async (req, res) => {
    var userData = await getUserDecodedClaims(req.cookies.session || '')
@@ -135,10 +117,14 @@ app.get('/auth', async (req, res) => {
    res.render('authentication');
 })
 
+app.get('/dashboard', (req, res) => {
+    res.render('dashboard')
+})
 
 app.use(function (req, res, next){
     res.status(404).render('404')
 })
+
 
 app.listen(process.env.PORT || 8080)
 
