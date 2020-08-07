@@ -21,7 +21,8 @@ canvas {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
-    top:0; z-index: -1;
+    top:0;
+     /* z-index: 0; */
 }
 
 .textbox {
