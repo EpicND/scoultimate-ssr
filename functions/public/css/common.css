@@ -1,3 +1,13 @@
+body {
+    margin:0;
+    font:normal 75% Arial, Helvetica, sans-serif;
+}
+
+html, body {
+    margin:0;
+    padding:0;
+    /* overflow:hidden; */
+}
 
 /* Transitions */
 ul.transition { 
@@ -11,6 +21,7 @@ ul.transition {
     margin: 0;
     padding:0px;
     pointer-events: none;
+    list-style-type: none;
 
 }
 
@@ -26,4 +37,61 @@ ul.transition li {
 
 .mdc-button:not(:disabled) {
     color: white;
+}
+
+.undecorated {
+    text-decoration: none;
+}
+
+.textbox {
+    margin-left:auto;
+    margin-right:auto;
+    display: inline-block;
+}
+
+.header {
+    width:100%;
+}
+
+.logo {
+    margin: 8px;
+    height: 60px;
+    width: 60px;
+}
+
+.text {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 1.5px;
+    font-size: 18px;
+    margin: 10px;
+    margin-top: 5px;
+    margin-bottom:15px;
+}
+
+.green {
+    color: green !important;
+}
+
+.mdc-button:not(:disabled) {
+    color: white;
+}
+
+.white {
+    color:white;
+}
+
+.mdc-button--outlined {
+    border: 1px solid #ffd000 !important;
+    border-radius: 2px;
+}
+
+.mdc-top-app-bar {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.pfp {
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
 }

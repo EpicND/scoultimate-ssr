@@ -1,125 +1,113 @@
 <!DOCTYPE html>
 <html>
     <head>
+      {{!-- META --}}
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
 
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
+      {{!-- Material Components --}}
 
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
       <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet" type="text/css">
       <script defer src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+      
+      {{!-- General CSS Imports --}}
 
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-      <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
-      <script defer src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 
+      {{!-- General JS Imports --}}
 
       <script defer src="https://www.googleoptimize.com/optimize.js?id=OPT-WPS9HFR"></script>
 
-      <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
-      <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
-      <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
-      <link rel="manifest" href="../assets/site.webmanifest">
-      <link rel="mask-icon" href="../assets/safari-pinned-tab.svg" color="#5bbad5">
-      <link rel="shortcut icon" href="../assets/favicon.ico">
-      <meta name="msapplication-TileColor" content="#2b5797">
-      <meta name="msapplication-config" content="../assets/browserconfig.xml">
-      <meta name="theme-color" content="#ffffff">
-    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <script defer src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-
-
-      <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
-  <script defer src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-        <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-        <link rel="stylesheet" href="../css/index.css">
-        <link rel="stylesheet" href="../css/transitions.css">
-         <link rel="stylesheet" href="../css/common.css">
+      {{!-- FONTS --}}
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
 
 
     </head>
-<body data-barba="wrapper">
-  <ul class="transition">
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-</ul>
+    <body data-barba="wrapper">
+      <ul class="transition">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
         
 
-  <aside class="mdc-drawer mdc-drawer--modal">
-    <div class="mdc-drawer__header">
-      <h3 class="mdc-drawer__title" src="signin.html">Dashboard</h3>
-      <h6 class="mdc-drawer__subtitle trigger"><a href="javascript:void(0)"  class="link signin dashboard-signin" id="dashboard-signin">Sign In</a></h6>
-      {{!-- <img class="asr" src="assets/android-chrome-192x192.png" /> --}}
-    </div>
-    <div class="mdc-drawer__content">
-      <nav class="mdc-list">
-        <a class="mdc-list-item mdc-list-item--activated dashboard-account" href="#" tabindex="0" aria-current="page">
-          <i class="material-icons mdc-list-item__graphic avatar avatar2" aria-hidden="true" src="signin.html">{{#if profileImageUrl}} <img class="pfp" src={{profileImageUrl}}> {{else}} account_circle{{/if}}</i>
-          <span class="mdc-list-item__text dashboard-account" id="dashboard-account" href="signin.html">My Account</span>
-        </a>
-        <a class="mdc-list-item" href="#" tabindex="0">
-          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">all_out</i>
-          <span class="mdc-list-item__text">My Team</span>
-        </a>
-        <a class="mdc-list-item" href="#" tabindex="0">
-          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">search</i>
-          <span class="mdc-list-item__text">Search</span>
-        </a>
-        <a class="mdc-list-item" href="#" tabindex="0">
-          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">notes</i>
-          <span class="mdc-list-item__text">Scouting</span>
-        </a>
-        <a class="mdc-list-item" href="#" tabindex="0">
-          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">miscellaneous_services</i>
-          <span class="mdc-list-item__text">Other Services</span>
-        </a>
-        <a class="mdc-list-item" href="#" tabindex="0">
-          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">info</i>
-          <span class="mdc-list-item__text">Info</span>
-        </a>
-      </nav>
-    </div>
-  </aside>
+      <aside class="mdc-drawer mdc-drawer--modal">
+        <div class="mdc-drawer__header">
+          <h3 class="mdc-drawer__title" src="signin.html">Dashboard</h3>
+          <h6 class="mdc-drawer__subtitle trigger">{{#if userData.email}} {{userData.email}} {{else}} <a href="javascript:void(0)"  class="link signin dashboard-signin" id="dashboard-signin">Sign In</a>{{/if}}</h6>
+        </div>
+        <div class="mdc-drawer__content">
+          <nav class="mdc-list">
+            <a class="mdc-list-item mdc-list-item--activated dashboard-account" href="#" tabindex="0" aria-current="page">
+              <i class="material-icons mdc-list-item__graphic avatar avatar2" aria-hidden="true" src="signin.html">{{#if profileImageUrl}} <img class="pfp" src={{profileImageUrl}}> {{else}} account_circle{{/if}}</i>
+              <span class="mdc-list-item__text dashboard-account" id="dashboard-account" href="signin.html">My Account</span>
+            </a>
+            <a class="mdc-list-item" href="#" tabindex="0">
+              <i class="material-icons mdc-list-item__graphic" aria-hidden="true">all_out</i>
+              <span class="mdc-list-item__text">My Team</span>
+            </a>
+            <a class="mdc-list-item" href="#" tabindex="0">
+              <i class="material-icons mdc-list-item__graphic" aria-hidden="true">search</i>
+              <span class="mdc-list-item__text">Search</span>
+            </a>
+            <a class="mdc-list-item" href="#" tabindex="0">
+              <i class="material-icons mdc-list-item__graphic" aria-hidden="true">notes</i>
+              <span class="mdc-list-item__text">Scouting</span>
+            </a>
+            <a class="mdc-list-item" href="#" tabindex="0">
+              <i class="material-icons mdc-list-item__graphic" aria-hidden="true">miscellaneous_services</i>
+              <span class="mdc-list-item__text">Other Services</span>
+            </a>
+            <a class="mdc-list-item" href="#" tabindex="0">
+              <i class="material-icons mdc-list-item__graphic" aria-hidden="true">info</i>
+              <span class="mdc-list-item__text">Info</span>
+            </a>
+          </nav>
+        </div>
+      </aside>
 
-  <div class="mdc-drawer-scrim"></div>
+      <div class="mdc-drawer-scrim"></div>
 
-  <div class="mdc-drawer-app-content">
+      <div class="mdc-drawer-app-content">
 
-    <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
-      <div class="mdc-top-app-bar__row">
-        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start" id="headerC">
-          <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
-          <span class="mdc-top-app-bar__title"></span>
-          <div class="iconsbox">
-            <img class="sv" src="https://img.icons8.com/dusk/64/000000/ios-logo.png"/>
-            <img class="sv" src="https://img.icons8.com/dusk/64/000000/android.png"/>
-            <img class="sv" src="https://img.icons8.com/plasticine/100/000000/discord-logo.png"/>
-            <img class="sv" src="https://img.icons8.com/dusk/64/000000/slack.png"/>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+          <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start" id="headerC">
+              <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
+              <span class="mdc-top-app-bar__title"></span>
+              <div class="iconsbox">
+                <img class="sv" src="https://img.icons8.com/dusk/64/000000/ios-logo.png"/>
+                <img class="sv" src="https://img.icons8.com/dusk/64/000000/android.png"/>
+                <img class="sv" src="https://img.icons8.com/plasticine/100/000000/discord-logo.png"/>
+                <img class="sv" src="https://img.icons8.com/dusk/64/000000/slack.png"/>
+              </div>
+              <link rel="stylesheet" href="../css/index.css">
+              <link rel="stylesheet" href="../css/transitions.css">
+              <link rel="stylesheet" href="../css/common.css">
+
+            </section>
           </div>
-          
+        </header>
 
-        </section>
+        <main class="mdc-top-app-bar--fixed-adjust">
       </div>
-    </header>
-
-    <main class="mdc-top-app-bar--fixed-adjust">
 
 
-  </div>
-
+      {{!-- CSS FILES FOR EVERY FILE --}}
+      <link rel="stylesheet" href="../css/common.css">
       
       <main data-barba="container" data-barba-namespace="index">
-        <!-- particles.js container --> <!-- particles.js lib - https://github.com/VincentGarreau/particles.js --> <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib -->
+      
+        {{!-- CSS FILES SPECIFIC TO INDEX --}}
+        <link rel="stylesheet" href="../css/index.css">
+        <link rel="stylesheet" href="../css/transitions.css">
+         
+
+        
 
         <div id="particles-js"> </div>
         <div class="page1">
@@ -132,13 +120,15 @@
                 <h4 class="text white"> Perfect For You</h4>
             </div>
             <div class="btnbox">
+              <a class="undecorated" href="/team/2264">
               <div class="mdc-touch-target-wrapper">
-                <button class="mdc-button mdc-button--outlined">
+                <button href="/team/2264" class="mdc-button mdc-button--outlined">
                   <div class="mdc-button__ripple"></div>
-                  <span class="mdc-button__label" style="color: #ffd000;">Get Started</span>
+                  <span  class="mdc-button__label" style="color: #ffd000;">Get Started</span>
                 </button>
-                <a href="/team/2264">2264</a>
+
               </div>
+              </a>
             </div>
             
         </div>
@@ -165,16 +155,13 @@
         </div>
 
 
-        <script>
-            particlesJS("particles-js", {"particles":{"number":{"value":80,"density":{"enable":true,"value_area":800}},"color":{"value":"#1f2833"},"shape":{"type":"circle","stroke":{"width":0,"color":"#1f2833"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":0.5,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":true,"distance":150,"color":"#c5c6c7","opacity":0.4,"width":1},"move":{"enable":true,"speed":6,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":false,"mode":"bubble"},"onclick":{"enable":true,"mode":"repulse"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});
-            mdc.ripple.MDCRipple.attachTo(document.querySelector('.foo-button'));
-        </script>
         </main>
-<script defer src="../js/materiallib.js"></script>
-<script defer src="../js/bez.js"></script>
-<script defer src="../js/scrollanimations.js"></script>
-<script src="https://unpkg.com/@barba/core"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
-<script src="../js/transitions.js"></script>
+
+
+      {{!-- NEED THESE IMPORTS EVERY TIME (ALONGSIDE MDC) --}}
+      <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+      <script src="../js/transitions.js"></script>
+      <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </body>
 </html>

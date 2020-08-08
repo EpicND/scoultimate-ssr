@@ -15,11 +15,8 @@ html, body {
     /* overflow:hidden; */
 }
 
-  
-
 canvas {
     display: block;
-    vertical-align: bottom;
 }
 
 /* ParticlesJS */
@@ -35,15 +32,6 @@ canvas {
     background-size: cover;
     background-position: 50% 50%;
     top:0;
-     /* z-index: 0; */
-}
-
-/*  */
-
-.textbox {
-    margin-left:auto;
-    margin-right:auto;
-    display: inline-block;
 }
 
 
@@ -133,52 +121,11 @@ canvas {
     margin-bottom: 10px;
 }
 
-.header {
-    width:100%;
-}
-
-.logo {
-    margin: 8px;
-    height: 60px;
-    width: 60px;
-}
-
-.text {
-    color: white;
-    font-family: 'Open Sans', sans-serif;
-    letter-spacing: 1.5px;
-    font-size: 18px;
-    margin: 10px;
-    margin-top: 5px;
-    margin-bottom:15px;
-}
-
-.green {
-    color: green !important;
-}
-
-.mdc-button:not(:disabled) {
-    color: white;
-}
-
-.white {
-    color:white;
-}
-
 .description {
     width: 60%;
-    margin-left: 20%;
-    font-size: 17px;
+    margin-left: 20vw !important;
+    font-size: 17px !important;
     color:#C5C6C7;
-}
-
-.mdc-button--outlined {
-    border: 1px solid #ffd000 !important;
-    border-radius: 2px;
-}
-
-.mdc-top-app-bar {
-    background-color: rgba(0, 0, 0, 0);
 }
 
 .sv {
@@ -241,10 +188,6 @@ canvas {
     top:0;
 }
 
-.pfp {
-    height: 24px;
-    width: 24px;
-    border-radius: 50%;
-}
+
 
   

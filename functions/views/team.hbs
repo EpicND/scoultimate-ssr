@@ -11,13 +11,21 @@
         <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-
+  <script defer src="../js/materiallib.js"></script>
+  <link rel="stylesheet" href="../css/common.css">
 </head>
 <body data-barba="wrapper">
-    <aside class="mdc-drawer mdc-drawer--modal">
+    <ul class="transition">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+   <aside class="mdc-drawer mdc-drawer--modal">
     <div class="mdc-drawer__header">
       <h3 class="mdc-drawer__title" src="signin.html">Dashboard</h3>
-      <h6 class="mdc-drawer__subtitle trigger"><a href="javascript:void(0)"  class="link signin dashboard-signin" id="dashboard-signin">Sign In</a></h6>
+      <h6 class="mdc-drawer__subtitle trigger">{{#if userData.email}} {{userData.email}} {{else}} <a href="javascript:void(0)"  class="link signin dashboard-signin" id="dashboard-signin">Sign In</a>{{/if}}</h6>
       {{!-- <img class="asr" src="assets/android-chrome-192x192.png" /> --}}
     </div>
     <div class="mdc-drawer__content">
@@ -49,13 +57,42 @@
       </nav>
     </div>
   </aside>
+
+  <div class="mdc-drawer-scrim"></div>
+
+  <div class="mdc-drawer-app-content">
+
+    <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+      <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start" id="headerC">
+          <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
+          <span class="mdc-top-app-bar__title"></span>
+
+          
+
+        </section>
+      </div>
+    </header>
+
+    <main class="mdc-top-app-bar--fixed-adjust">
+
+      
+  </div>
     <main data-barba="container" data-barba-namespace="team">
+      <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <div class="bcgrd">
         <h2>{{teamData.nickname}}</h2>
         <h5>{{teamData.name}}</h5>
-        <a href="/team/2264">2264</a>
+        <h3>{{teamData.awards.length}}</h3>
+        <a href="/">2264</a>
         <link rel="stylesheet" href="../css/team.css">
       </div>
 </main>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+
+<script src="../js/transitions.js"></script>
 </body>
 </html>

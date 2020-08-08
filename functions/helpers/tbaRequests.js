@@ -3,7 +3,6 @@ const fetch = require('node-fetch');
 
 // Constants
 const key = "lrqZK0XAvSpeHXuWi9vhbmnAbF4ueBRQB3OevJC1pOWIWQdwX1WKRJ4oQceP0ox5";
-
 async function gdfe(endpoint) {
     var response = new Object;
     await fetch(`https://www.thebluealliance.com/api/v3/${endpoint}?X-TBA-Auth-Key=${key}`)
@@ -27,6 +26,10 @@ async function getTeamDetails(teamNumber) {
         });
     if (response == {}) return response;
     await gdfe(`team/frc${teamNumber}/awards`)
+        .then((resp) => {
+            // if(resp.length >=! 1) return;
+            response.awards = resp;
+        })
     return response;
 }
 
