@@ -2,14 +2,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
+/* Common */
+
 body {
     margin:0;
     font:normal 75% Arial, Helvetica, sans-serif;
 }
+
+html, body {
+    margin:0;
+    padding:0;
+    /* overflow:hidden; */
+}
+
+  
+
 canvas {
     display: block;
     vertical-align: bottom;
 }
+
+/* ParticlesJS */
 
 #particles-js {
     position:fixed;
@@ -25,21 +38,24 @@ canvas {
      /* z-index: 0; */
 }
 
+/*  */
+
 .textbox {
     margin-left:auto;
     margin-right:auto;
     display: inline-block;
 }
+
+
+/* NOTE FIX FOR MOBILE  */
+/* Pages */
+
 .page1 {
     text-align:center;
     position:fixed;
     height:100%;
     top:0px;
 }
-
-
-
-/* NOTE FIX FOR MOBILE  */
 
 .page2 {
     text-align:center;
@@ -125,11 +141,6 @@ canvas {
     margin: 8px;
     height: 60px;
     width: 60px;
-}
-html, body {
-  margin:0;
-  padding:0;
-  /* overflow:hidden; */
 }
 
 .text {
@@ -235,25 +246,5 @@ html, body {
     width: 24px;
     border-radius: 50%;
 }
-ul.transition { 
-    display: flex;
-    position: fixed;
-    z-index: 10;
-    height: 100vh;
-    width: 100%;
-    top: 0;
-    left: 0;
-    margin: 0;
-    padding:0px;
-    pointer-events: none;
 
-}
-
-ul.transition li {
-    transform: scaleY(0);
-    background: white;
-    width: 20%;
-}
-/* #effect {
-    overflow-x: hidden;
-} */
+  

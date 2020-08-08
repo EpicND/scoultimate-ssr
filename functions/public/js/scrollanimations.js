@@ -17,7 +17,6 @@ function main() {
              if(2.5*st > $(window).width()) {
                 $("#effect").animate({width:$(window).width()}, 10);
              } else {
-                // $("#effect").animate({width:$(window).width}, 1000, $.bez([0,0,0.6,1]));
                 $("#effect").animate({width:2.5*st}, 10);
              }
          }

@@ -1,0 +1,29 @@
+
+/* Transitions */
+ul.transition { 
+    display: flex;
+    position: fixed;
+    z-index: 10;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding:0px;
+    pointer-events: none;
+
+}
+
+ul.transition li {
+    transform: scaleY(0);
+    background: white;
+    width: 20%;
+}
+
+.green {
+    color: green !important;
+}
+
+.mdc-button:not(:disabled) {
+    color: white;
+}
