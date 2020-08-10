@@ -1,6 +1,6 @@
 #firebaseui-auth-container {
-    margin-top: 33%;
-    margin-bottom: 33%;
+    margin-top: 33vh;
+    margin-bottom: 33vh;
 }
 .firebaseui-idp-google, .firebaseui-idp-google:hover, .mdl-button.firebaseui-idp-google:active, .mdl-button.firebaseui-idp-google:focus {
     background-color: #2f2f2f;
