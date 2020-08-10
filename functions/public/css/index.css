@@ -4,16 +4,7 @@
 
 /* Common */
 
-body {
-    margin:0;
-    font:normal 75% Arial, Helvetica, sans-serif;
-}
 
-html, body {
-    margin:0;
-    padding:0;
-    /* overflow:hidden; */
-}
 
 canvas {
     display: block;
@@ -48,13 +39,15 @@ canvas {
 .page2 {
     text-align:center;
     position:absolute;
-    width:100%;
+    width:1%;
+    height:100%;
     margin-top:100vh;
     display:flex;
 }
 
 .p2left, .p2right {
-    width:auto
+    width:auto;
+    overflow: hidden;
 }
 
 .p2left {
@@ -188,6 +181,19 @@ canvas {
     top:0;
 }
 
+
+@media only screen and (max-width: 768px) {
+    .p2left {
+        width:inherit;
+        background-color: #1F2833;
+    }
+    
+    .p2right {
+        width:0%;
+        background-color: #45A29E;
+    }
+    
+}
 
 
   

@@ -1,18 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta property="og:title" content="{{teamNickName}} on Scoultimate">
-<meta property="og:description" content="View team information for {{teamNickName}} on Scoultimate">
-<meta property="og:image" content="http://res.cloudinary.com/dk6fgyqvh/image/upload/v1594072427/{{teamNumber}}">
-{{!-- <meta property="og:url" content="http://euro-travel-example.com/index.htm%22%3E"> --}}
+    {{!-- META --}}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{teamData.nickname}} | Scoultimate</title>
-        <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+
+    <meta property="og:title" content="{{teamNickName}} on Scoultimate">
+    <meta property="og:description" content="View team information for {{teamNickName}} on Scoultimate">
+    <meta property="og:image" content="http://res.cloudinary.com/dk6fgyqvh/image/upload/v1594072427/{{teamNumber}}">
+
+    {{!-- Material Components --}}
+    
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <script defer src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+
+    {{!-- General CSS Imports --}}
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-  <script defer src="../js/materiallib.js"></script>
-  <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/common.css">
+
+    <title>{{teamData.nickname}} | Scoultimate</title>
+
+    {{!-- General JS Imports --}}
+
+    <script defer src="https://www.googleoptimize.com/optimize.js?id=OPT-WPS9HFR"></script>
+    <script defer src="../js/materiallib.js"></script>
+
+    {{!-- FONTS --}}
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
+
 </head>
 <body data-barba="wrapper">
     <ul class="transition">
@@ -26,7 +45,6 @@
     <div class="mdc-drawer__header">
       <h3 class="mdc-drawer__title" src="signin.html">Dashboard</h3>
       <h6 class="mdc-drawer__subtitle trigger">{{#if userData.email}} {{userData.email}} {{else}} <a href="javascript:void(0)"  class="link signin dashboard-signin" id="dashboard-signin">Sign In</a>{{/if}}</h6>
-      {{!-- <img class="asr" src="assets/android-chrome-192x192.png" /> --}}
     </div>
     <div class="mdc-drawer__content">
       <nav class="mdc-list">
@@ -79,20 +97,24 @@
       
   </div>
     <main data-barba="container" data-barba-namespace="team">
-      <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      {{!-- PAGE SPECIFIC CSS COMPONENTS --}}
+      <link rel="stylesheet" href="../css/team.css">
+      
       <div class="bcgrd">
         <h2>{{teamData.nickname}}</h2>
         <h5>{{teamData.name}}</h5>
         <h3>{{teamData.awards.length}}</h3>
         <a href="/">2264</a>
-        <link rel="stylesheet" href="../css/team.css">
+
       </div>
 </main>
 
 
-<script defer src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+  {{!-- NEED THESE IMPORTS EVERY TIME (ALONGSIDE MDC) --}}
+  <script defer src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+  <script defer src="../js/transitions.js"></script>
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<script src="../js/transitions.js"></script>
 </body>
 </html>

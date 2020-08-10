@@ -6,3 +6,7 @@ body, .bcgrd {
 h2, h5 {
     color:white;
 }
+
+.iconsbox {
+    display:none;
+}

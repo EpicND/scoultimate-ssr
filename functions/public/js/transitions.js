@@ -32,6 +32,7 @@ function delay(n) {
 
 document.addEventListener('DOMContentLoaded', () => {
     barba.init({
+        timeout: 5000,
         sync: false,
         views: [{
             namespace: 'index',
