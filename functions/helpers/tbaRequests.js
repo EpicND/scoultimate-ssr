@@ -15,7 +15,7 @@ async function gdfe(endpoint) {
     return response;
 }
 
-async function getTeamDetails(teamNumber) {
+async function getTeamDetails(teamNumber = null) {
     var response = {};
     await gdfe(`team/frc${teamNumber}`)
         .then((resp) => {
@@ -27,9 +27,15 @@ async function getTeamDetails(teamNumber) {
     if (response == {}) return response;
     await gdfe(`team/frc${teamNumber}/awards`)
         .then((resp) => {
-            // if(resp.length >=! 1) return;
+            if(resp.length === 0) return;
             response.awards = resp;
         })
+    await gdfe(`team/frc${teamNumber}/years_participated`)
+        .then((resp) => {response.years = resp})
+    await gdfe(`team/frc${teamNumber}/media/2020`).then((resp) => {
+        if(!resp[0]) return response.picture = null; 
+        response.picture = resp[0].details.base64Image;
+    })
     return response;
 }
 

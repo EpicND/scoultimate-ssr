@@ -49,7 +49,7 @@
     <div class="mdc-drawer__content">
       <nav class="mdc-list">
         <a class="mdc-list-item mdc-list-item--activated dashboard-account" href="#" tabindex="0" aria-current="page">
-          <i class="material-icons mdc-list-item__graphic avatar avatar2" aria-hidden="true" src="signin.html">{{#if profileImageUrl}} <img class="pfp" src={{profileImageUrl}}> {{else}} account_circle{{/if}}</i>
+          <i class="material-icons mdc-list-item__graphic avatar avatar2" aria-hidden="true" src="signin.html">{{#if userData.picture}}<img class="pfp" src={{userData.picture}}> {{else}} account_circle{{/if}}</i>
           <span class="mdc-list-item__text dashboard-account" id="dashboard-account" href="signin.html">My Account</span>
         </a>
         <a class="mdc-list-item" href="#" tabindex="0">
@@ -103,7 +103,10 @@
       <div class="bcgrd">
         <h2>{{teamData.nickname}}</h2>
         <h5>{{teamData.name}}</h5>
-        <h3>{{teamData.awards.length}}</h3>
+        <h3 style="color: white;">{{teamData.awards.length}}</h3>
+        <h3 style="color: white;">{{teamData.years.length}}</h3>
+        <h3 style="color: white;">{{teamData.years}}</h3>
+        <img src="data:image/png;base64, {{teamData.picture}}"/>
         <a href="/">2264</a>
 
       </div>

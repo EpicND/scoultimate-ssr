@@ -56,7 +56,7 @@ app.post("/sessionLogin", (req, res) => {
     const idToken = req.body.idToken.toString();
 
     const expiresIn = 3600000 * 120;
-    admin
+        admin
         .auth()
         .createSessionCookie(idToken, {expiresIn})
         .then(
@@ -87,13 +87,14 @@ app.get('/sessionLogout', (req, res) => {
 app.get('/team/:teamNumber', async (req, res) => {
     var teamNumber = req.params.teamNumber;
     var teamData = await tba.getTeamDetails(teamNumber);
+
+    if(teamData == {}) return res.render('404');
     
-    if(teamData == {}) return res.render('404')
     var userData = await getUserDecodedClaims(req.cookies.session || '')
     // console.log(userData)
-    var profileImageUrl = (userData && userData.picture) ? userData.picture : null;
-    console.log(teamData)
-    res.render('team', { teamData, profileImageUrl, userData })
+    
+    // console.log(teamData)
+    res.render('team', { teamData, userData })
 });
 
 app.get('/', async (req, res) => {

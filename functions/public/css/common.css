@@ -2,6 +2,7 @@ body {
     margin:0;
     font:normal 75% Arial, Helvetica, sans-serif;
     overflow-x:hidden;
+    background-color: #0b0c10;
 }
 
 html, body {
@@ -11,7 +12,7 @@ html, body {
 }
 
 /* Transitions */
-ul.transition { 
+ul.transition {
     display: flex;
     position: fixed;
     z-index: 10;

@@ -7,6 +7,7 @@ function pageTransition() {
         transformOrigin: "bottom left",
         stagger: .2
     })
+
     tl.to('ul.transition li', {
         duration: .5,
         scaleY: 0,
@@ -44,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             async leave(data) {
                 const done = this.async();
                 pageTransition();
-                await delay(1400);
+                await delay(1350);
                 done();
             },
             async enter(data) {

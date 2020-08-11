@@ -1,4 +1,3 @@
-// mdc.ripple.MDCRipple.attachTo(document.querySelector('.foo-button'));
 const list = mdc.drawer.MDCDrawer.attachTo(document.querySelector('.mdc-drawer'))
 list.wrapFocus = true;
 function testFunct(){
