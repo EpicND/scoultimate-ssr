@@ -7,7 +7,7 @@ const cookieParser = require('cookie-parser');
 const csrf = require('csurf');
 const bodyParser = require('body-parser');
 const admin = require("firebase-admin");
-const tba = require(__dirname + "helpers/tbaRequests.js")
+const tba = require(__dirname + "/helpers/tbaRequests.js")
 
 
 const csrfMiddleware = csrf({cookie: true})
