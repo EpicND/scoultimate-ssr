@@ -39,17 +39,12 @@ document.addEventListener('DOMContentLoaded', () => {
     barba.init({
         timeout: 5000,
         sync: false,
-        views: [
-            {
-                namespace: 'index',
-                afterEnter(data) {
-                    index();
-                }
-            },
-            {
-
+        views: [{
+            namespace: 'index',
+            afterEnter(data) {
+                index();
             }
-        ],
+        }],
         transitions: [{
             async leave(data) {
                 setTimeout(pageTransition1, 1);
