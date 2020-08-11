@@ -6,7 +6,8 @@
     "shell": "firebase functions:shell",
     "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
-    "logs": "firebase functions:log"
+    "logs": "firebase functions:log",
+    "devStart": "nodemon functions/index.js"
   },
   "engines": {
     "node": "13"
@@ -23,6 +24,7 @@
     "firebase-functions": "^3.6.1",
     "handlebars": "^4.7.6",
     "node-fetch": "^2.6.0",
+    "node-vibrant": "^3.1.5",
     "nodemon": "^2.0.4"
   },
   "devDependencies": {
