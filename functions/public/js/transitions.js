@@ -1,23 +1,24 @@
 
-    var tl = gsap.timeline();
-function pageTransition1() {
+var tl = gsap.timeline();
+async function pageTransition1() {
 
 
-    tl.to('ul.transition li', {
-        duration: .25,
+    await tl.to('ul.transition li', {
+        duration: 1,
         scaleY: 1,
         transformOrigin: "bottom left",
-        stagger: .05
-    })
+        stagger: 0.2
+    });
+    return true;
 }
 
 function pageTransition2() {
     tl.to('ul.transition li', {
-        duration: .25,
+        duration: 1,
         scaleY: 0,
         transformOrigin: "bottom left",
-        stagger: .05,
-        delay: .05
+        stagger: 0.2,
+        delay: .2
     })
 }
 
@@ -47,9 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }],
         transitions: [{
             async leave(data) {
-                var done = this.async();
-                setTimeout(pageTransition1, 1);
-                setTimeout(done, 250);
+                // var done = this.async();
+                // setTimeout(pageTransition1, 1);
+                // setTimeout(done, 250);
+                await pageTransition1();
+                return true;
             },
             async enter(data) {
                 setTimeout(pageTransition2, 1);
