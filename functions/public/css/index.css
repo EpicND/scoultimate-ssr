@@ -39,7 +39,7 @@ canvas {
 .page2 {
     text-align:center;
     position:absolute;
-    width:1%;
+    width:.1%;
     height:100%;
     margin-top:100vh;
     display:flex;
@@ -153,6 +153,10 @@ canvas {
     right:0;
 }
 
+.iconsbox2 {
+    display:none;
+}
+
 .spacing {
     letter-spacing: 2px;
 }
@@ -191,6 +195,48 @@ canvas {
     .p2right {
         width:0%;
         background-color: #45A29E;
+    }
+
+
+}
+
+@media only screen and (max-width: 500px) {
+    .iconsbox {
+        display: none;
+    }
+    
+    .text {
+        margin-top: 10px;
+        margin-bottom:20px;
+    }
+
+    .p2ltitle {
+        font-size: 50px;
+    }
+
+    .p2lpara {
+        font-size:16px;
+    }
+
+    .p2lstitle {
+        margin-bottom: 10px;
+    }
+
+    .description {
+        margin-top:40px;
+        margin-bottom:30px;
+        width: 80%;
+        margin-left: 10% !important;
+        margin-right:10%;
+    }
+
+    #title {
+        font-size:13vw;
+    }
+
+    .iconsbox2 {
+        display:block;
+        margin-top:20px;
     }
     
 }
