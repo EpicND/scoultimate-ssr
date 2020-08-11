@@ -1,0 +1,12 @@
+body, .bcgrd {
+    height:100%;
+    background-color:black;
+}
+
+h2, h5 {
+    color:white;
+}
+
+.iconsbox {
+    display:none;
+}

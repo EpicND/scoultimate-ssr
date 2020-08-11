@@ -7,7 +7,7 @@ const cookieParser = require('cookie-parser');
 const csrf = require('csurf');
 const bodyParser = require('body-parser');
 const admin = require("firebase-admin");
-const tba = require(__dirname + "helpers/tbaRequests.js")
+const tba = require(__dirname + "/helpers/tbaRequests.js")
 
 
 const csrfMiddleware = csrf({cookie: true})
@@ -55,7 +55,7 @@ async function getUserDecodedClaims(sessionToken) {
 app.post("/sessionLogin", (req, res) => {
     const idToken = req.body.idToken.toString();
 
-    const expiresIn = 60 * 60 * 24 * 5 * 1000;
+    const expiresIn = 3600000 * 120;
     admin
         .auth()
         .createSessionCookie(idToken, {expiresIn})
@@ -88,9 +88,12 @@ app.get('/team/:teamNumber', async (req, res) => {
     var teamNumber = req.params.teamNumber;
     var teamData = await tba.getTeamDetails(teamNumber);
     
-    if(!teamNickName || !teamName) return res.render('404')
-
-    res.render('team', { teamData })
+    if(teamData == {}) return res.render('404')
+    var userData = await getUserDecodedClaims(req.cookies.session || '')
+    // console.log(userData)
+    var profileImageUrl = (userData && userData.picture) ? userData.picture : null;
+    console.log(teamData)
+    res.render('team', { teamData, profileImageUrl, userData })
 });
 
 app.get('/', async (req, res) => {

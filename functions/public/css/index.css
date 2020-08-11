@@ -2,14 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
-body {
-    margin:0;
-    font:normal 75% Arial, Helvetica, sans-serif;
-}
+/* Common */
+
+
+
 canvas {
     display: block;
-    vertical-align: bottom;
 }
+
+/* ParticlesJS */
 
 #particles-js {
     position:fixed;
@@ -21,14 +22,13 @@ canvas {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
-    top:0; z-index: -1;
+    top:0;
 }
 
-.textbox {
-    margin-left:auto;
-    margin-right:auto;
-    display: inline-block;
-}
+
+/* NOTE FIX FOR MOBILE  */
+/* Pages */
+
 .page1 {
     text-align:center;
     position:fixed;
@@ -36,20 +36,18 @@ canvas {
     top:0px;
 }
 
-
-
-/* NOTE FIX FOR MOBILE  */
-
 .page2 {
     text-align:center;
     position:absolute;
-    width:100%;
+    width:1%;
+    height:100%;
     margin-top:100vh;
     display:flex;
 }
 
 .p2left, .p2right {
-    width:auto
+    width:auto;
+    overflow: hidden;
 }
 
 .p2left {
@@ -116,57 +114,11 @@ canvas {
     margin-bottom: 10px;
 }
 
-.header {
-    width:100%;
-}
-
-.logo {
-    margin: 8px;
-    height: 60px;
-    width: 60px;
-}
-html, body {
-  margin:0;
-  padding:0;
-  /* overflow:hidden; */
-}
-
-.text {
-    color: white;
-    font-family: 'Open Sans', sans-serif;
-    letter-spacing: 1.5px;
-    font-size: 18px;
-    margin: 10px;
-    margin-top: 5px;
-    margin-bottom:15px;
-}
-
-.green {
-    color: green !important;
-}
-
-.mdc-button:not(:disabled) {
-    color: white;
-}
-
-.white {
-    color:white;
-}
-
 .description {
     width: 60%;
-    margin-left: 20%;
-    font-size: 17px;
+    margin-left: 20vw !important;
+    font-size: 17px !important;
     color:#C5C6C7;
-}
-
-.mdc-button--outlined {
-    border: 1px solid #ffd000 !important;
-    border-radius: 2px;
-}
-
-.mdc-top-app-bar {
-    background-color: rgba(0, 0, 0, 0);
 }
 
 .sv {
@@ -229,28 +181,19 @@ html, body {
     top:0;
 }
 
-.pfp {
-    height: 24px;
-    width: 24px;
-    border-radius: 50%;
-}
-ul.transition { 
-    display: flex;
-    position: absolute;
-    z-index: 10;
-    height: 100vh;
-    width: 100%;
-    top: 0;
-    left: 0;
-    margin: 0;
-    pointer-events: none;
+
+@media only screen and (max-width: 768px) {
+    .p2left {
+        width:inherit;
+        background-color: #1F2833;
+    }
+    
+    .p2right {
+        width:0%;
+        background-color: #45A29E;
+    }
+    
 }
 
-ul.transition li {
-    transform: scaleY(0);
-    background: white;
-    width: 20%;
-}
-/* #effect {
-    overflow-x: hidden;
-} */
+
+  
