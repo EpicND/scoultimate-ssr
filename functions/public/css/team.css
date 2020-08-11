@@ -1,6 +1,6 @@
 body, .bcgrd {
     height:100%;
-    background-color:black;
+    /* background-color:black; */
 }
 
 h2, h5 {
@@ -9,4 +9,22 @@ h2, h5 {
 
 .iconsbox {
     display:none;
+}
+.mdc-tab .mdc-tab__text-label {
+    color: rgb(255 177 0 / 91%);
+}
+.gradient-wrap {
+    width: 150px;
+    height: 150px;
+    display:table-cell;
+    vertical-align:middle;
+    text-align:center;
+    border-radius: 50%;
+    background-color: white;
+    /* justify-items: center; */
+}
+img.team-logo-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 15%;
 }

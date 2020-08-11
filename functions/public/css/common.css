@@ -1,3 +1,6 @@
+:root {
+    --mdc-theme-primary: #b76e00;
+}
 body {
     margin:0;
     font:normal 75% Arial, Helvetica, sans-serif;
