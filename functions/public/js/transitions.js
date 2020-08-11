@@ -47,7 +47,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }],
         transitions: [{
             async leave(data) {
+                var done = this.async();
                 setTimeout(pageTransition1, 1);
+                setTimeout(done, 250);
             },
             async enter(data) {
                 setTimeout(pageTransition2, 1);
