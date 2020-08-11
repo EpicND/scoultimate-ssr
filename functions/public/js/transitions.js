@@ -4,20 +4,20 @@ async function pageTransition1() {
 
 
     await tl.to('ul.transition li', {
-        duration: 1,
+        duration: 0.4,
         scaleY: 1,
         transformOrigin: "bottom left",
-        stagger: 0.2
+        stagger: 0.08
     });
     return true;
 }
 
 function pageTransition2() {
     tl.to('ul.transition li', {
-        duration: 1,
+        duration: 0.4,
         scaleY: 0,
         transformOrigin: "bottom left",
-        stagger: 0.2,
+        stagger: 0.08,
         delay: .2
     })
 }
