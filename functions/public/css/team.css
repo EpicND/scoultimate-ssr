@@ -28,3 +28,10 @@ img.team-logo-img {
     height: 60px;
     border-radius: 15%;
 }
+div.bcgrd {
+    max-width: 500px;
+    margin-left: 3vw;
+}
+p{ 
+    color: white;
+}
