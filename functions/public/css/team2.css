@@ -102,7 +102,7 @@ p{
     margin:20px;
     margin-right:40px;
     /* NOTE CHANGE MARGIN TO 20PX IF NO SCROLLBAR */
-    height:110px;
+    height:fit-content;
     display:flex;
     background-color: rgba(255, 255, 255, 0.16);
     border-radius:5px;
@@ -111,6 +111,7 @@ p{
 .card-event {
     width:100%;
     display:flex;
+    max-width: 900px;
 }
 
 .eventInfo-wrapper {
@@ -127,7 +128,6 @@ p{
 }
 
 .eventYear {
-    height:100%;
     color:lightgray;
     font-family: 'Open Sans', sans-serif;
     writing-mode: vertical-lr;

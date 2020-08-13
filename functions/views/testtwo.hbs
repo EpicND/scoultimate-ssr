@@ -117,23 +117,25 @@
             <a class="awdsbox-ttl">Similar Teams</a>
           </div>
         </div>
+        {{#each teamData.events}}
         <div class="bottom-right-wrapper">
           <div class="card-event-wrapper">
             <div class="card-event">
-              <a class="eventYear">2020</a>
+              <a class="eventYear">{{this.year}}</a>
               <div class="eventInfo-wrapper">
-                <a class="eventName">Lake Superior Regional</a>
+                <a class="eventName">{{this.name}}</a>
                 <a class="eventLocation">Duluth, MN</a>
                 <a class="eventDates">February 5th - February 8th</a>
               </div>
             </div>
           </div>
-          <div class="card-event-wrapper">
+{{/each}}
+          {{!-- <div class="card-event-wrapper">
             <div class="card-event"></div>
           </div>
           <div class="card-event-wrapper">
             <div class="card-event"></div>
-          </div>
+          </div> --}}
         </div>
       </div>
 
