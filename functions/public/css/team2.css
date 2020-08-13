@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Tomorrow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+
+body, .bcgrd {
+    height:100%;
+    /* background-color:black; */
+}
+
+h2, h5 {
+    color:white;
+}
+
+.iconsbox {
+    display:none;
+}
+.mdc-tab .mdc-tab__text-label {
+    color: rgb(255 177 0 / 91%);
+}
+.gradient-wrap {
+    width: 75px;
+    height: 75px;
+    display:table-cell;
+    vertical-align:middle;
+    text-align:center;
+    border-radius: 50%;
+    background-color: white;
+    /* justify-items: center; */
+}
+img.team-logo-img {
+    /* margin-right: 25px; */
+    margin-top: 25px;
+    width: 30px;
+    height: 30px;
+    border-radius: 15%;
+}
+div.bcgrd {
+    max-width: 97vw;
+    margin-left: 72px;
+}
+p{ 
+    color: white;
+}
+
+.teamName {
+    width:97vw;
+    font-size:60px;
+    color: white;
+    font-family: 'Tomorrow', sans-serif;
+    margin-right:40vw;
+}
+
+.teamImage {
+    position: absolute;
+    top:-25px;
+    right:-25px;
+}
+
+.teamNumber {
+    width: 97vw;
+    
+    color:red;
+    font-size:40px;
+    font-family: 'Tomorrow', sans-serif;
+}
+
+.teamLocation {
+    width: 97vw;
+    color:white;
+    font-size:40px;
+    font-family: 'Tomorrow', sans-serif;
+}

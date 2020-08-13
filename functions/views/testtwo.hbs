@@ -84,7 +84,7 @@
       <div class="mdc-top-app-bar__row">
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start" id="headerC">
           <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
-          <span class="mdc-top-app-bar__title"></span>
+          <span class="mdc-top-app-bar__title teamNumber">1816</span>
 
           
 
@@ -98,17 +98,18 @@
   </div>
     <main data-barba="container" data-barba-namespace="team">
       {{!-- PAGE SPECIFIC CSS COMPONENTS --}}
-      <link rel="stylesheet" href="../css/team.css">
+      <link rel="stylesheet" href="../css/team2.css">
       <script defer src="https://unpkg.com/grade-js/docs/dist/grade.js"></script>
             <div class="bcgrd">
-        {{!-- <div class="gradient-wrap" ><img class="team-logo-img" src="data:image/png;base64, {{teamData.picture}}"/></div> --}}
-<h3 style="color: white;">{{teamData.awards.length}} Awards</h3>
-        <h3 style="color: white;">{{teamData.years.length}} Years</h3>
-        <h2>{{teamData.nickname}}</h2>
-        <h5>{{teamData.name}}</h5>
+              <a class="teamName"> {{teamData.nickname}}</a>
+              <a class="teamLocation"> Edina, Minnesota</a>
         
-        <h3 style="color: white;">{{teamData.years}}</h3>
+        <h3 style="color: white;">{{teamData.awards.length}} Awards ● {{teamData.years.length}} Years ● 1880 elo (top 5%)</h3>
+        
+                        {{!-- <div class="gradient-wrap teamImage" ><img class="team-logo-img" src="data:image/png;base64, {{teamData.picture}}"/></div> --}}
+        {{!-- <h3 style="color: white;">{{teamData.years}}</h3> --}}
         {{!-- <a href="/">2264</a> --}}
+
 
       </div>
       <div class="mdc-tab-bar" role="tablist">
