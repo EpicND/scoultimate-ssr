@@ -35,20 +35,132 @@ img.team-logo-img {
     height: 30px;
     border-radius: 15%;
 }
-div.bcgrd {
-    max-width: 97vw;
-    margin-left: 72px;
-}
+
 p{ 
     color: white;
 }
 
+
+
+.top-wrapper {
+    height: 30vh;
+    width: 100vw;
+    display: flex;
+    border-bottom: 1px solid white;
+}
+
+.top-right-wrapper {
+    flex-grow:3;
+    min-width:30vw;
+}
+
+.top-left-wrapper {
+    flex-grow:7;
+    display:flex;
+    flex-direction: column;
+    text-align:left;
+    padding-left:60px;
+}
+
+.bottom-wrapper {
+    min-height: calc(70vh - 65px);
+    width: 100vw;
+    display: flex;
+    
+}
+
+.bottom-right-wrapper {
+    flex-grow:7;
+    min-width:70vw;
+    display:flex;
+    flex-direction: column;
+}
+
+.bottom-left-wrapper {
+    flex-grow:3;
+    min-width:30vw;
+    border-right: 1px solid white;
+    display:flex;
+    flex-direction: column;
+}
+
+.bottom-left-top-wrapper {
+    height:50%;
+    padding: 5px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.bottom-left-bottom-wrapper {
+    border-top:1px solid white;
+    height:calc(50% - 1px);
+    padding: 5px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.card-event-wrapper {
+    margin:20px;
+    margin-right:40px;
+    /* NOTE CHANGE MARGIN TO 20PX IF NO SCROLLBAR */
+    height:110px;
+    display:flex;
+    background-color: rgba(255, 255, 255, 0.16);
+    border-radius:5px;
+}
+
+.card-event {
+    width:100%;
+    display:flex;
+}
+
+.eventInfo-wrapper {
+    margin:10px;
+    display:flex;
+    flex-direction: column;
+}
+
+.eventName {
+    font-size: 25px;
+    font-family: 'Open Sans', sans-serif;
+    color:white;
+    height:fit-content;
+}
+
+.eventYear {
+    height:100%;
+    color:lightgray;
+    font-family: 'Open Sans', sans-serif;
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    font-size: 40px;
+    /* padding-top:5px; */
+    text-align:center;
+    border-right:1px solid white;
+}
+
+.eventLocation {
+    color: lightgray;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.eventDates {
+    color: lightslategray;
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.awdsbox-ttl {
+    padding-top:10px;
+    color:lightgrey;
+}
+
 .teamName {
-    width:97vw;
+
     font-size:60px;
     color: white;
     font-family: 'Tomorrow', sans-serif;
-    margin-right:40vw;
+
 }
 
 .teamImage {
@@ -58,16 +170,27 @@ p{
 }
 
 .teamNumber {
-    width: 97vw;
-    
+    padding:0px !important;
     color:red;
     font-size:40px;
     font-family: 'Tomorrow', sans-serif;
 }
 
 .teamLocation {
-    width: 97vw;
-    color:white;
-    font-size:40px;
+
+    color:gray;
+    font-size:35px;
     font-family: 'Tomorrow', sans-serif;
+}
+
+.mdc-drawer-app-content {
+    height:56px;
+}
+
+.mdc-top-app-bar {
+    height:56px;
+}
+
+.mdc-top-app-bar__row {
+    height: 56px !important;
 }

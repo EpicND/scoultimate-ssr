@@ -85,9 +85,6 @@
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start" id="headerC">
           <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
           <span class="mdc-top-app-bar__title teamNumber">1816</span>
-
-          
-
         </section>
       </div>
     </header>
@@ -96,77 +93,67 @@
 
       
   </div>
-    <main data-barba="container" data-barba-namespace="team">
+    <main data-barba="container" data-barba-namespace="team" style="min-height: calc(100vh - 64px);
+    width: 100vw;">
       {{!-- PAGE SPECIFIC CSS COMPONENTS --}}
       <link rel="stylesheet" href="../css/team2.css">
       <script defer src="https://unpkg.com/grade-js/docs/dist/grade.js"></script>
-            <div class="bcgrd">
-              <a class="teamName"> {{teamData.nickname}}</a>
-              <a class="teamLocation"> Edina, Minnesota</a>
+
+      <div class="top-wrapper">
+        <div class="top-left-wrapper">
+          <a class="teamName">The Green Machine</a>
+          <a class="teamLocation">Edina, Minnesota</a>
+        </div>
+        <div class="top-right-wrapper">
+          
+        </div>
+      </div>
+      <div class="bottom-wrapper">
+        <div class="bottom-left-wrapper">
+          <div class="bottom-left-top-wrapper">
+            <a class="awdsbox-ttl">Trophy Case</a>
+          </div>
+          <div class="bottom-left-bottom-wrapper">
+            <a class="awdsbox-ttl">Similar Teams</a>
+          </div>
+        </div>
+        <div class="bottom-right-wrapper">
+          <div class="card-event-wrapper">
+            <div class="card-event">
+              <a class="eventYear">2020</a>
+              <div class="eventInfo-wrapper">
+                <a class="eventName">Lake Superior Regional</a>
+                <a class="eventLocation">Duluth, MN</a>
+                <a class="eventDates">February 5th - February 8th</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-event-wrapper">
+            <div class="card-event"></div>
+          </div>
+          <div class="card-event-wrapper">
+            <div class="card-event"></div>
+          </div>
+        </div>
+      </div>
+
+                  {{!-- <div class="bcgrd"> --}}
+              
         
-        <h3 style="color: white;">{{teamData.awards.length}} Awards ● {{teamData.years.length}} Years ● 1880 elo (top 5%)</h3>
+        {{!-- <h3 style="color: white;">{{teamData.awards.length}} Awards ● {{teamData.years.length}} Years ● 1880 elo (top 5%)</h3> --}}
         
                         {{!-- <div class="gradient-wrap teamImage" ><img class="team-logo-img" src="data:image/png;base64, {{teamData.picture}}"/></div> --}}
-        {{!-- <h3 style="color: white;">{{teamData.years}}</h3> --}}
-        {{!-- <a href="/">2264</a> --}}
-
-
-      </div>
-      <div class="mdc-tab-bar" role="tablist">
-<div class="mdc-tab-bar" role="tablist">
-  <div class="mdc-tab-scroller">
-    <div class="mdc-tab-scroller__scroll-area">
-      <div class="mdc-tab-scroller__scroll-content">
-        <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
-          <span class="mdc-tab__content">
-            <span class="mdc-tab__text-label">Events</span>
-          </span>
-          <span class="mdc-tab-indicator mdc-tab-indicator--active">
-            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-          </span>
-          <span class="mdc-tab__ripple"></span>
-        </button>
-        <button class="mdc-tab mdc-tab" role="tab" aria-selected="true" tabindex="0">
-          <span class="mdc-tab__content">
-            <span class="mdc-tab__text-label">Awards</span>
-          </span>
-          <span class="mdc-tab-indicator mdc-tab-indicator">
-            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-          </span>
-          <span class="mdc-tab__ripple"></span>
-        </button>
-        <button class="mdc-tab mdc-tab" role="tab" aria-selected="true" tabindex="0">
-          <span class="mdc-tab__content">
-            <span class="mdc-tab__text-label">Other</span>
-          </span>
-          <span class="mdc-tab-indicator mdc-tab-indicator">
-            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-          </span>
-          <span class="mdc-tab__ripple"></span>
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="content content--active">
-  <p>Content one</p></div>
-<div class="content">
-  <p>Content two</p>
-</div>
-<div class="content">
-  <p>Content three</p>
-</div>
 
 
 
-      <style>.content {
-  display: none;
-}
 
-.content--active {
-  display: block;
-}</style>
-<script>    window.addEventListener('load', function(){
+
+
+
+
+      
+<script>    
+  window.addEventListener('load', function(){
         /*
             A NodeList of all your image containers (Or a single Node).
             The library will locate an <img /> within each
