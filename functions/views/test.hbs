@@ -98,19 +98,24 @@
   </div>
     <main data-barba="container" data-barba-namespace="team">
       {{!-- PAGE SPECIFIC CSS COMPONENTS --}}
+      
       <link rel="stylesheet" href="../css/team.css">
       <script defer src="https://unpkg.com/grade-js/docs/dist/grade.js"></script>
-            <div class="bcgrd">
-        <div class="gradient-wrap" ><img class="team-logo-img" src="data:image/png;base64, {{teamData.picture}}"/></div>
-<h3 style="color: white;">{{teamData.awards.length}} Awards</h3>
+            {{!-- <div class="bcgrd"> --}}
+              <div class="team-profile--grid">
+             <div class="team-profile--flex-team-data-img-name">
+  <div class="team-logo-wrap"></div><div class="gradient-wrap" ><img class="team-logo-img" src="data:image/png;base64, {{teamData.picture}}"/></div></div>
+            <h2 class="team-nickname">{{teamData.nickname}}</h2>
+                </div>
+        <h3 style="color: white;">{{teamData.awards.length}} Awards</h3>
         <h3 style="color: white;">{{teamData.years.length}} Years</h3>
-        <h2>{{teamData.nickname}}</h2>
+
         <h5>{{teamData.name}}</h5>
         
-        <h3 style="color: white;">{{teamData.years}}</h3>
+        {{!-- <h3 style="color: white;">{{teamData.years}}</h3> --}}
         {{!-- <a href="/">2264</a> --}}
 
-      </div>
+      {{!-- </div> --}}
       <div class="mdc-tab-bar" role="tablist">
 <div class="mdc-tab-bar" role="tablist">
   <div class="mdc-tab-scroller">
@@ -148,9 +153,39 @@
   </div>
 </div>
 <div class="content content--active">
-  <div class="mdc-card mdc-card--outlined">
+
+  {{!-- <div class="mdc-card mdc-card--outlined">
   <!-- ... content ... -->
-</div></div>
+</div> --}}
+{{!-- {{#if events.length >= 1}} --}}
+{{#each teamData.events}}
+<div class="mdc-card">
+  <div class="mdc-card__primary-action" tabindex="0">
+    {{!-- <div class="mdc-card__media mdc-card__media--16-9 mdc-card__media" style="background-image: url(&quot;https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/2.jpg&quot;);"></div> --}}
+    <div class="mdc-card__primary">
+      <h2 class="mdc-card__title mdc-typography mdc-typography--headline6 event-name"><a class="" href="/event/{{this.key}}" target="_blank"></a>{{this.name}}</h2>
+      <h3 class="mdc-card__subtitle mdc-typography mdc-typography--subtitle2"><a class="event-location--link" href={{this.gmaps_url}}>{{this.location_name}} | Week {{this.week}} - {{this.start_date}} to {{this.end_date}}</a></h3>
+    </div>
+    <div class="mdc-card__secondary mdc-typography mdc-typography--body2">Visit ten places on our planet that are undergoing the biggest changes today.</div>
+  </div>
+  <div class="mdc-card__actions">
+    <div class="mdc-card__action-buttons">
+      <a href="/event/{{this.key}}"><button class="mdc-button mdc-card__action mdc-card__action--button" >  <span class="mdc-button__ripple"></span> View Event</button></a>
+      {{!-- <button class="mdc-button mdc-card__action mdc-card__action--button">  <span class="mdc-button__ripple"></span> Bookmark</button> --}}
+    </div>
+    <div class="mdc-card__action-icons">
+      <button class="mdc-icon-button mdc-card__action mdc-card__action--icon--unbounded" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
+        <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
+        <i class="material-icons mdc-icon-button__icon">favorite_border</i>
+      </button>
+      <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded" title="Share" data-mdc-ripple-is-unbounded="true">share</button>
+      <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded" title="More options" data-mdc-ripple-is-unbounded="true">more_vert</button>
+    </div>
+  </div>
+</div>
+{{/each}}
+
+</div>
 <div class="content">
   <p>Content two</p>
 </div>
@@ -158,7 +193,7 @@
   <p>Content three</p>
 </div>
 
-
+</div>
 
       <style>.content {
   display: none;

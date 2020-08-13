@@ -36,6 +36,8 @@ async function getTeamDetails(teamNumber = null) {
         if(!resp[0]) return response.picture = null; 
         response.picture = resp[0].details.base64Image;
     })
+    await gdfe(`team/frc${teamNumber}/events/2020`)
+    .then((resp)=> {console.log(resp); response.events = resp;})
     return response;
 }
 
