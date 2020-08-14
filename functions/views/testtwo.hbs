@@ -84,7 +84,7 @@
       <div class="mdc-top-app-bar__row">
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start" id="headerC">
           <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
-          <span class="mdc-top-app-bar__title teamNumber">1816</span>
+          <span class="mdc-top-app-bar__title teamNumber">{{teamNumber}}</span>
         </section>
       </div>
     </header>
@@ -101,8 +101,8 @@
 
       <div class="top-wrapper">
         <div class="top-left-wrapper">
-          <a class="teamName">The Green Machine</a>
-          <a class="teamLocation">Edina, Minnesota</a>
+          <a class="teamName">{{teamData.nickname}}</a>
+          <a class="teamLocation">{{teamData.location}}</a>
         </div>
         <div class="top-right-wrapper">
           
@@ -124,7 +124,7 @@
               <a class="eventYear">{{this.year}}</a>
               <div class="eventInfo-wrapper">
                 <a class="eventName">{{this.name}}</a>
-                <a class="eventLocation">Duluth, MN</a>
+                <a class="eventLocation">{{this.city}}, {{this.state_prov}}</a>
                 <a class="eventDates">February 5th - February 8th</a>
               </div>
             </div>
