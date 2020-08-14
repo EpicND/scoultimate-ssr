@@ -67,7 +67,23 @@ async function teamEvents(teamNumber) {
     var response = {};
 
     await gdfe(`team/frc${teamNumber}/events/2020`)
-    .then((resp)=> {console.log(resp); response.events = resp; })
+    .then((resp)=> { 
+        // console.log(resp)
+        response.events = resp;
+        // if(resp.length >= 1) return;
+        response.events.sort((a, b) => {
+            var startDate1 = new Date(a.start_date)
+            var startDate2 = new Date(b.start_date)
+            return startDate1.getTime() - startDate2.getTime()
+        })
+
+        for(i=0; response.events.length > i; i++) {
+            var startDate = new Date(response.events[i].start_date)
+            var endDate = new Date(response.events[i].end_date);
+            response.events[i].dateString = `${months[startDate.getMonth()]} ${startDate.getDate()} - ${months[endDate.getMonth()]} ${endDate.getDate()}`
+        }
+    
+    })
     return response;
 
 }
