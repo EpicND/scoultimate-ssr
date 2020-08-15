@@ -25,7 +25,7 @@ async function gdfe(endpoint) {
 }
 
 async function teamAwards(teamNumber) {
-    var response = {};
+    var response = new Object;
 
     await gdfe(`team/frc${teamNumber}/awards`)
         .then((resp) => {
@@ -37,7 +37,7 @@ async function teamAwards(teamNumber) {
 }
 
 async function teamYears(teamNumber) {
-    var response = {};
+    var response = new Object;
 
     await gdfe(`team/frc${teamNumber}/years_participated`)
         .then((resp) => {response.years = resp})
@@ -46,7 +46,7 @@ async function teamYears(teamNumber) {
 }
 
 async function teamMedia(teamNumber) {
-    var response = {};
+    var response = new Object;
     
     await gdfe(`team/frc${teamNumber}/media/2020`).then((resp) => {
         if(!resp[0]) return response.picture = null; 
@@ -57,7 +57,7 @@ async function teamMedia(teamNumber) {
 }
 
 async function teamEvents(teamNumber) {
-    var response = {};
+    var response = new Object;
 
     await gdfe(`team/frc${teamNumber}/events/2020`)
     .then((resp)=> { 
@@ -83,14 +83,17 @@ async function teamEvents(teamNumber) {
 }
 
 async function basicTeamDetails(teamNumber) {
-    var response = {};
+    var response = new Object;
     await gdfe(`team/frc${teamNumber}`)
         .then((resp) => {
-            console.log(resp)
+            // console.log(resp)
             if (resp["Errors"] != undefined || resp["Errors"] != null) return response = {};
             response.name = (resp.name) ? resp.name : null;
             response.nickname = (resp.nickname) ? resp.nickname : null;
-            response.location = (resp.state_prov && resp.city) ? `${resp.city}, ${resp.state_prov}` : "Not Available"
+            response.location = (resp.state_prov && resp.city) ? `${resp.city}, ${resp.state_prov}` : "Location Not Available";
+            response.city = resp.city;
+            response.state_prov = resp.state_prov;
+            response.country = resp.country;
         });
         return response;
 }
