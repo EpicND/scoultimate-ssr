@@ -106,7 +106,7 @@ app.get('/team/:teamNumber', async (req, res) => {
     
     // console.log(teamData)
     console.log(teamData)
-    // console.log(teamData.city)
+    console.log(teamData.city)
     res.render('testtwo', { teamData, userData, teamNumber })
 });
 

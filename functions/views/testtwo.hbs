@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta property="og:title" content="{{teamData.nickname}} (Team {{teamNumber}})">
-    <meta property="og:description" content="View FIRST Robotics Team {{teamNumber}}">
-    {{#if teamData.city}} <meta property="og:description" content="View FIRST Robotics Team {{teamNumber}} from {{teamData.location}} on Scoultimate"> {{else}} <meta property="og:description" content="View FIRST Robotics Team {{teamNumber}} on Scoultimate">{{/if}}
+    {{#if teamData.city}} <meta property="og:description" content="FIRST Robotics Team {{teamNumber}} from {{teamData.location}} on Scoultimate"> {{else}} <meta property="og:description" content="FIRST Robotics Team {{teamNumber}} on Scoultimate">{{/if}}
     {{#if teamData.picture}} <meta property="og:image" content="http://res.cloudinary.com/dk6fgyqvh/image/upload/v1594072427/{{teamNumber}}"> {{else}} <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/frc-scouting-epicnd.appspot.com/o/scoultimate-logo.png?alt=media&token=e57ad6be-e082-4bcc-8d01-19a634883293"> {{/if}}
     <meta property="og:type" content="sports_team">
     <meta property="og:url" content="https://scoultimatetestsite.herokuapp.com/team/{{teamNumber}}">
