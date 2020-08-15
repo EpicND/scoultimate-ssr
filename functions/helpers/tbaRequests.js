@@ -63,7 +63,6 @@ async function teamEvents(teamNumber) {
     .then((resp)=> { 
         // console.log(resp)
         if(resp.Errors) return response = {};
-        console.log(resp)
         response.events = resp;
         // if(resp.length >= 1) return;
         response.events.sort((a, b) => {
