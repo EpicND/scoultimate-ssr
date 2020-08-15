@@ -5,10 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta property="og:title" content="{{teamData.nickname}} on Scoultimate">
+    <meta property="og:title" content="{{teamData.nickname}} (Team {{teamNumber}}) on Scoultimate">
     <meta property="og:description" content="View team information for team {{teamNumber}} on Scoultimate">
     <meta property="og:image" content="http://res.cloudinary.com/dk6fgyqvh/image/upload/v1594072427/{{teamNumber}}">
-
+    <meta property="og:type" content="sports_team">
+    <meta property="og:url" content="https://scoultimatetestsite.herokuapp.com/team/{{teamNumber}}">
+    <meta property="og:site_name" content="Scoultimate">
+    <meta property="og:locality" content="{{teamData.city}}">
+    <meta property="og:region" content="{{teamData.state_prov}}">
+    <meta property="og:country-name" content="{{teamData.country}}">
     {{!-- Material Components --}}
     
     <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">

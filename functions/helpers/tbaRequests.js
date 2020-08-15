@@ -86,6 +86,7 @@ async function basicTeamDetails(teamNumber) {
     var response = {};
     await gdfe(`team/frc${teamNumber}`)
         .then((resp) => {
+            console.log(resp)
             if (resp["Errors"] != undefined || resp["Errors"] != null) return response = {};
             response.name = (resp.name) ? resp.name : null;
             response.nickname = (resp.nickname) ? resp.nickname : null;
