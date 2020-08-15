@@ -55,7 +55,7 @@ p{
 }
 
 .top-left-wrapper {
-    flex-grow:7;
+    flex-grow:7 7 auto;
     display:flex;
     flex-direction: column;
     text-align:left;
@@ -155,8 +155,8 @@ p{
     color:lightgrey;
 }
 
-.teamName {
-
+a.teamName {
+    word-break: break-all;
     font-size:60px;
     color: white;
     font-family: 'Tomorrow', sans-serif;

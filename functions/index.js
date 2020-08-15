@@ -98,7 +98,7 @@ app.get('/team/:teamNumber', async (req, res) => {
     var teamNumber = req.params.teamNumber;
     var teamData = await tba.getTeamDetails(teamNumber);
 
-    if(teamData == {}) return res.render('404');
+    if(!teamData.nickname || !teamData.name) return res.status(404).render('404');
     
 
     var userData = await getUserDecodedClaims(req.cookies.session || '')

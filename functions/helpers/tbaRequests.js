@@ -10,13 +10,6 @@ const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 
 
 
 
-class tba {
-    constructor(teamNumber) {
-        this.teamNumber = teamNumber;
-    }
-    
-
-}
 
 
 async function gdfe(endpoint) {
@@ -69,6 +62,8 @@ async function teamEvents(teamNumber) {
     await gdfe(`team/frc${teamNumber}/events/2020`)
     .then((resp)=> { 
         // console.log(resp)
+        if(resp.Errors) return response = {};
+        console.log(resp)
         response.events = resp;
         // if(resp.length >= 1) return;
         response.events.sort((a, b) => {
@@ -88,8 +83,7 @@ async function teamEvents(teamNumber) {
 
 }
 
-
-async function getTeamDetails(teamNumber = null) {
+async function basicTeamDetails(teamNumber) {
     var response = {};
     await gdfe(`team/frc${teamNumber}`)
         .then((resp) => {
@@ -98,8 +92,11 @@ async function getTeamDetails(teamNumber = null) {
             response.nickname = (resp.nickname) ? resp.nickname : null;
             response.location = (resp.state_prov && resp.city) ? `${resp.city}, ${resp.state_prov}` : "Not Available"
         });
-    if (response == {}) return response;
-        await Promise.all([teamYears(teamNumber), teamEvents(teamNumber), teamMedia(teamNumber), teamAwards(teamNumber)]).then((val) => {
+        return response;
+}
+async function getTeamDetails(teamNumber = null) {
+    var response = new Object;
+        await Promise.all([basicTeamDetails(teamNumber), teamYears(teamNumber), teamEvents(teamNumber), teamMedia(teamNumber), teamAwards(teamNumber)]).then((val) => {
             for(i=0; i<val.length; i++) {
                 response = {...response, ...val[i]}
             }
