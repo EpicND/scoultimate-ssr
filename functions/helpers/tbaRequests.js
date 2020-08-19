@@ -59,7 +59,7 @@ async function teamMedia(teamNumber) {
 async function teamEvents(teamNumber) {
     var response = {};
 
-    await gdfe(`team/frc${teamNumber}/events/2020`)
+    await gdfe(`team/frc${teamNumber}/events/2019`)
     .then((resp)=> { 
         // console.log(resp)
         if(resp.Errors) return response = {};
