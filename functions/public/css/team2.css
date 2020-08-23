@@ -49,9 +49,13 @@ p{
     border-bottom: 1px solid white;
 }
 
-.top-right-wrapper {
+div.top-right-wrapper {
     flex-grow:3;
     min-width:30vw;
+    height: 10em;
+    display: flex;
+    align-items: center;
+    justify-content: center
 }
 
 .top-left-wrapper {
