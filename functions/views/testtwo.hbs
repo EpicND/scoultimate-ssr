@@ -118,14 +118,17 @@
       <div class="bottom-wrapper">
         <div class="bottom-left-wrapper">
           <div class="bottom-left-top-wrapper">
+            <a class="awdsbox-ttl">Team Overview</a>
+          </div>
+          <div class="bottom-left-middle-wrapper">
             <a class="awdsbox-ttl">Trophy Case</a>
           </div>
           <div class="bottom-left-bottom-wrapper">
             <a class="awdsbox-ttl">Similar Teams</a>
           </div>
         </div>
-        {{#each teamData.events}}
         <div class="bottom-right-wrapper">
+        {{#each teamData.events}}
           <div class="card-event-wrapper">
             <div class="card-event">
               <a class="eventYear">{{this.year}}</a>
@@ -137,6 +140,7 @@
             </div>
           </div>
 {{/each}}
+</div>
           {{!-- <div class="card-event-wrapper">
             <div class="card-event"></div>
           </div>
@@ -144,7 +148,6 @@
             <div class="card-event"></div>
           </div> --}}
         </div>
-      </div>
 
                   {{!-- <div class="bcgrd"> --}}
               
