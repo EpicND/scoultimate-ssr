@@ -80,7 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
 //PAGE SPECIFIC FUNCTIONS
 
 function index() {
-    $(".mdc-top-app-bar__title").html(" ");
+ 
+   $(".mdc-top-app-bar__title").html(" ");
     $.ajax({
         url: "http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js",
         cache: true,

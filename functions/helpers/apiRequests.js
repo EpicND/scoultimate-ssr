@@ -97,9 +97,24 @@ async function basicTeamDetails(teamNumber) {
         });
         return response;
 }
+
+async function statboticsTeamData(teamNumber) {
+    var response = new Object;
+    await fetch(`https://backend.statbotics.io/api/team/${teamNumber}`)
+        .then(async (resp) => {
+            try{
+              resp = await resp.json()  
+            response.elo = `${resp[0].elo} Elo`;
+            } catch(e) {
+            console.log(e)
+            response.elo = 'Elo Unavailable';
+            }
+        })
+        return response;
+}
 async function getTeamDetails(teamNumber = null) {
     var response = new Object;
-        await Promise.all([basicTeamDetails(teamNumber), teamYears(teamNumber), teamEvents(teamNumber), teamMedia(teamNumber), teamAwards(teamNumber)]).then((val) => {
+        await Promise.all([basicTeamDetails(teamNumber), teamYears(teamNumber), teamEvents(teamNumber), teamMedia(teamNumber), teamAwards(teamNumber), statboticsTeamData(teamNumber)]).then((val) => {
             for(i=0; i<val.length; i++) {
                 response = {...response, ...val[i]}
             }
