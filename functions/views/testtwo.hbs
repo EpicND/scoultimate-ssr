@@ -102,15 +102,19 @@
     width: 100vw;">
       {{!-- PAGE SPECIFIC CSS COMPONENTS --}}
       <link rel="stylesheet" href="../css/team2.css">
-      <script defer src="https://unpkg.com/grade-js/docs/dist/grade.js"></script>
+      
 
       <div class="top-wrapper">
         <div class="top-left-wrapper">
-          <a class="teamName">{{teamData.nickname}}</a>
-          <a class="teamLocation">{{teamData.location}}</a>
+          <div class="teamInfoContainer"> 
+            <a class="teamName">{{teamData.nickname}}</a>
+            <a class="teamLocation">{{teamData.location}}</a>
+            <a class="teamString">13 Years ● 3 Awards ● {{teamData.elo}} Elo</a>
+          </div>
         </div>
         <div class="top-right-wrapper">
-          
+          {{#if teamData.picture}}<div class="team-logo-wrap"><div class="team-logo-wrap-2"><div class="gradient-wrap" ><img class="team-logo-img" src="data:image/png;base64, {{teamData.picture}}"/></div></div></div></div> {{/if}}
+          <a class="eventYear2">2019</a>
         </div>
       </div>
       <div class="bottom-wrapper">
@@ -163,15 +167,8 @@
 
       
 <script>    
-  window.addEventListener('load', function(){
-        /*
-            A NodeList of all your image containers (Or a single Node).
-            The library will locate an <img /> within each
-            container to create the gradient from.
-         */
-        Grade(document.querySelectorAll('.gradient-wrap'))
-        const tabScroller = new mdc.tabScroller.MDCTabScroller(document.querySelector('.mdc-tab-scroller'));
-    })</script>
+  
+    </script>
 </main>
 
 

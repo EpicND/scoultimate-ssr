@@ -46,10 +46,16 @@ document.addEventListener('DOMContentLoaded', () => {
             beforeEnter(data) {
                 console.log("sup");
                   index();
-                  
-        
                 }
-        }],
+        },
+        {
+            namespace: 'team',
+            beforeEnter(data) {
+                console.log("sup");
+                  team();
+                }
+        }
+    ],
         transitions: [{
             async leave(data) {
                 // var done = this.async();
@@ -59,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return true;
             },
             async enter(data) {
-                setTimeout(pageTransition2, 1);
+                setTimeout(pageTransition2, 100);
             },
             async once(data) {
                 // contentAnimation();
@@ -74,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //PAGE SPECIFIC FUNCTIONS
 
 function index() {
-    
+    $(".mdc-top-app-bar__title").html(" ");
     $.ajax({
         url: "http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js",
         cache: true,
@@ -128,10 +134,46 @@ function main() {
     
 
     mdc.ripple.MDCRipple.attachTo(document.querySelector('.foo-button'));
+    
 }
 
 
 
 function team() {
+        var location = window.location.href;
+        var start = location.lastIndexOf("/") + 1;
+        var url = location.substring(start);
+        $(".mdc-top-app-bar__title").html(url);
+        $(".mdc-top-app-bar__title").addClass("teamNumber");
+            $(function($){
+        $(".teamName").each(function () {
+            var numChars = $(this).text().length;     
+            if ((numChars >= 1) && (numChars < 20)) {
+                $(this).css("font-size", "4.4em");
+            }
+            else if ((numChars >= 20) && (numChars < 60)) {
+                $(this).css("font-size", "3.6em");
+            }
+            else if ((numChars >= 60) && (numChars < 100)) {
+                $(this).css("font-size", "2em");
+            }
+            else if ((numChars >= 100) && (numChars < 140)) {
+                $(this).css("font-size", "1.8em");
+            }
+            else {
+                $(this).css("font-size", "1.6em");
+            }           
+        });
 
+        $.ajax({
+            url: "https://unpkg.com/grade-js/docs/dist/grade.js",
+            cache: true,
+            dataType: 'script',
+            success: function () {
+                Grade(document.querySelectorAll('.gradient-wrap'));
+
+            }
+        });
+    
+    });
 }
