@@ -87,7 +87,7 @@ div.top-right-wrapper {
     min-width:70vw;
     display:flex;
     flex-direction: column;
-    margin-left:30vw;
+    margin-left:31vw;
     max-width:70vw;
 }
 
@@ -252,6 +252,13 @@ a.teamName {
     justify-content: center;
 }
 
+
+
+@media only screen and (min-width: 676px) {
+    .mdc-tab-bar {
+        display: none;
+    }
+}
 @media only screen and (max-width: 676px) {
     .bottom-right-wrapper {
         margin-left:0vw !important;
@@ -264,7 +271,7 @@ a.teamName {
     }
 
     .teamName {
-        font-size:30px !important;
+        font-size:28px !important;
     }
 
     .top-left-wrapper {
@@ -279,11 +286,78 @@ a.teamName {
         font-size:20px;
     }
 
+    .teamString {
+        font-size:16px;
+        margin-bottom: 5px;
+    }
+
     .top-wrapper {
-        height:10% !important;
+        height:auto !important;
+    }
+
+    
+
+    .gradient-wrap {
+        width: 60px;
+        height: 60px;
+    }
+
+    img.team-logo-img {
+        margin-top: 7.5px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .eventYear2 {
+        display:none;
+    } 
+
+
+    .eventName {
+        font-size: 20px;
+        font-family: 'Open Sans', sans-serif;
+        color:white;
+        height:fit-content;
+    }
+    
+    .eventYear {
+        font-size: 20px;
+
+    }
+    
+    .eventLocation {
+        color: lightgray;
+        font-size: 16px;
+        font-family: 'Open Sans', sans-serif;
+    }
+    
+    .eventDates {
+        color: lightslategray;
+        font-size: 14px;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    .card-event-wrapper {
+        margin: 10px;
+    }
+
+    .top-wrapper {
+        position: relative;
+        margin-top: 0px !important;
+        top:0px;
     }
 
     .bottom-wrapper {
-        margin-top: calc(10% + 56px) !important;
+        margin-top:0px;
     }
+
+    .mdc-tab .mdc-tab__text-label {
+        color: white;
+    }
+
+    .mdc-tab-indicator .mdc-tab-indicator__content--underline {
+        /* border-color: #6200ee; */
+        border-color: white !important;
+    }
+    
 }
