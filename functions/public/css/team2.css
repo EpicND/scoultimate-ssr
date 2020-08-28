@@ -247,6 +247,7 @@ a.teamName {
 }
 
 .team-logo-wrap {
+    margin-right: 8vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -276,6 +277,7 @@ a.teamName {
 
     .top-left-wrapper {
         padding-left: 5px !important;
+        margin-bottom: 20px;
     }
 
     .teamLocation {
