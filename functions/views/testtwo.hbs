@@ -121,12 +121,25 @@
         <div class="bottom-left-wrapper">
           <div class="bottom-left-top-wrapper">
             <a class="awdsbox-ttl">Team Overview</a>
+            <a class="teamName-ovbox">{{teamData.nickname}}</a>
+            <a class="teamLocation-ovbox">{{teamData.location}}</a>
+            <a class="teamString-ovbox">{{teamData.years.length}} Years ● {{teamData.awards.length}} Awards ● {{teamData.elo}}</a>
           </div>
           <div class="bottom-left-middle-wrapper">
             <a class="awdsbox-ttl">Trophy Case</a>
           </div>
           <div class="bottom-left-bottom-wrapper">
             <a class="awdsbox-ttl">Similar Teams</a>
+                      <div class="card-event-wrapper">
+            <div class="card-event">
+              <a class="eventYear">{{this.year}}</a>
+              <div class="eventInfo-wrapper">
+                <a class="eventName">{{this.name}}</a>
+                <a class="eventLocation">{{this.city}}, {{this.state_prov}}</a>
+                <a class="eventDates">{{this.dateString}}</a>
+              </div>
+            </div>
+          </div>
           </div>
         </div>
 
@@ -164,10 +177,11 @@
         {{#each teamData.events}}
           <div class="card-event-wrapper">
             <div class="card-event">
+              <img class="card-back-img" src="data:base64, ">
               <a class="eventYear">{{this.year}}</a>
               <div class="eventInfo-wrapper">
                 <a class="eventName">{{this.name}}</a>
-                <a class="eventLocation">{{this.city}}, {{this.state_prov}}</a>
+                <a class="eventLocation"></a>
                 <a class="eventDates">{{this.dateString}}</a>
               </div>
             </div>

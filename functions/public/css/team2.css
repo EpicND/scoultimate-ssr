@@ -5,7 +5,6 @@
 
 body, .bcgrd {
     height:100%;
-    /* background-color:black; */
 }
 
 top-wrapper {
@@ -63,6 +62,7 @@ p{
     top: 0px;
     background-color:black;
     z-index:3;
+    padding-bottom: 20px;
 }
 
 div.top-right-wrapper {
@@ -141,6 +141,8 @@ div.top-right-wrapper {
     display:flex;
     background-color: rgba(255, 255, 255, 0.16);
     border-radius:5px;
+    max-width: 100px;
+height: 110px;
 }
 
 .card-event {
@@ -307,7 +309,7 @@ a.teamName {
         height:auto !important;
     }
 
-    
+
 
     .gradient-wrap {
         width: 60px;
@@ -322,7 +324,7 @@ a.teamName {
 
     .eventYear2 {
         display:none;
-    } 
+    }
 
 
     .eventName {
@@ -331,18 +333,18 @@ a.teamName {
         color:white;
         height:fit-content;
     }
-    
+
     .eventYear {
         font-size: 20px;
 
     }
-    
+
     .eventLocation {
         color: lightgray;
         font-size: 16px;
         font-family: 'Open Sans', sans-serif;
     }
-    
+
     .eventDates {
         color: lightslategray;
         font-size: 14px;
@@ -371,5 +373,5 @@ a.teamName {
         /* border-color: #6200ee; */
         border-color: white !important;
     }
-    
+
 }
