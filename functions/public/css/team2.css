@@ -55,7 +55,7 @@ p{
 
 
 .top-wrapper {
-    min-height: 30vh;
+    /* height: 30vh; */
     width: 100vw;
     display: flex;
     border-bottom: 1px solid white;
