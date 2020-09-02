@@ -15,6 +15,8 @@ const csrfMiddleware = csrf({cookie: true})
 
 const app = express();
 
+const apiRouter = require('./api/v1')
+
 app.engine('hbs', engines.handlebars)
 app.set('views', path.join(__dirname, '/views'))
 app.set('view engine', 'hbs')
@@ -22,6 +24,7 @@ app.use(express.static(path.join(__dirname, '/public')))
 app.use(bodyParser.json())
 app.use(cookieParser())
 app.use(csrfMiddleware)
+app.use('/api/v1', apiRouter)
 
 
 
